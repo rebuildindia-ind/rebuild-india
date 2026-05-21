@@ -1,0 +1,1268 @@
+<!-- =========================================================
+REBUILD INDIA - dashboard.html
+FULL MOBILE FUTURISTIC DASHBOARD
+CONNECTED TO FIREBASE LIVE
+========================================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Rebuild India Dashboard</title>
+
+  <!-- FONT -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- ICONS -->
+
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Inter',sans-serif;
+    }
+
+    body{
+
+      background:#030303;
+
+      color:white;
+
+      overflow-x:hidden;
+
+      padding-bottom:120px;
+
+    }
+
+    a{
+      text-decoration:none;
+      color:white;
+    }
+
+    /* ====================================
+       BACKGROUND
+    ==================================== */
+
+    .background{
+
+      position:fixed;
+      inset:0;
+
+      background:
+      radial-gradient(
+      circle at top right,
+      rgba(57,255,20,0.12),
+      transparent 35%
+      ),
+      #030303;
+
+      z-index:-3;
+
+    }
+
+    .grid{
+
+      position:fixed;
+      inset:0;
+
+      background-image:
+      linear-gradient(rgba(57,255,20,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(57,255,20,0.04) 1px, transparent 1px);
+
+      background-size:60px 60px;
+
+      z-index:-2;
+
+    }
+
+    /* ====================================
+       TOPBAR
+    ==================================== */
+
+    .topbar{
+
+      width:100%;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      padding:22px 20px;
+
+    }
+
+    .menu-btn{
+
+      font-size:28px;
+
+      color:white;
+
+    }
+
+    .logo{
+
+      text-align:center;
+
+    }
+
+    .logo h1{
+
+      font-size:34px;
+
+      font-weight:900;
+
+      line-height:1;
+
+    }
+
+    .logo span{
+      color:#39ff14;
+    }
+
+    .logo p{
+
+      margin-top:8px;
+
+      color:rgba(255,255,255,0.6);
+
+      font-size:12px;
+
+      letter-spacing:2px;
+
+    }
+
+    .bell{
+
+      position:relative;
+
+      font-size:26px;
+
+    }
+
+    .bell-count{
+
+      position:absolute;
+
+      top:-8px;
+      right:-10px;
+
+      width:24px;
+      height:24px;
+
+      border-radius:50%;
+
+      background:#39ff14;
+
+      color:black;
+
+      font-size:12px;
+      font-weight:800;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+    }
+
+    /* ====================================
+       PROFILE CARD
+    ==================================== */
+
+    .profile-card{
+
+      width:calc(100% - 30px);
+
+      margin:auto;
+
+      border-radius:26px;
+
+      overflow:hidden;
+
+      background:
+      linear-gradient(
+      rgba(0,0,0,0.6),
+      rgba(0,0,0,0.8)
+      ),
+      url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop');
+
+      background-size:cover;
+      background-position:center;
+
+      border:1px solid rgba(57,255,20,0.15);
+
+      padding:24px;
+
+      position:relative;
+
+      margin-top:10px;
+
+    }
+
+    .profile-top{
+
+      display:flex;
+      gap:18px;
+
+      align-items:center;
+
+    }
+
+    .profile-img{
+
+      width:110px;
+      height:110px;
+
+      border-radius:50%;
+
+      border:4px solid #39ff14;
+
+      object-fit:cover;
+
+    }
+
+    .profile-info h2{
+
+      font-size:26px;
+
+      font-weight:900;
+
+      line-height:1.3;
+
+    }
+
+    .profile-info h2 span{
+      color:#39ff14;
+    }
+
+    .role{
+
+      display:inline-block;
+
+      margin-top:12px;
+
+      padding:10px 18px;
+
+      border-radius:999px;
+
+      background:rgba(57,255,20,0.14);
+
+      color:#39ff14;
+
+      font-weight:700;
+
+      font-size:14px;
+
+    }
+
+    .member-id{
+
+      margin-top:10px;
+
+      font-size:22px;
+
+      font-weight:800;
+
+    }
+
+    .join-date{
+
+      margin-top:10px;
+
+      color:rgba(255,255,255,0.72);
+
+      font-size:14px;
+
+    }
+
+    /* ====================================
+       STATS
+    ==================================== */
+
+    .stats{
+
+      width:calc(100% - 30px);
+
+      margin:20px auto;
+
+      display:grid;
+      grid-template-columns:1fr 1fr;
+
+      gap:14px;
+
+    }
+
+    .stat-card{
+
+      background:rgba(255,255,255,0.03);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      border-radius:22px;
+
+      padding:24px 18px;
+
+      text-align:center;
+
+    }
+
+    .stat-card i{
+
+      font-size:34px;
+
+      margin-bottom:16px;
+
+    }
+
+    .green{ color:#39ff14; }
+    .yellow{ color:#ffcc00; }
+    .blue{ color:#4d7cff; }
+    .purple{ color:#b14dff; }
+
+    .stat-card h3{
+
+      font-size:13px;
+
+      color:rgba(255,255,255,0.7);
+
+      margin-bottom:12px;
+
+    }
+
+    .stat-card h2{
+
+      font-size:38px;
+
+      font-weight:900;
+
+    }
+
+    .stat-card p{
+
+      margin-top:12px;
+
+      color:#39ff14;
+
+      font-size:13px;
+
+      font-weight:700;
+
+    }
+
+    /* ====================================
+       SECTION
+    ==================================== */
+
+    .section{
+
+      width:calc(100% - 30px);
+
+      margin:18px auto;
+
+      background:rgba(255,255,255,0.03);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      border-radius:24px;
+
+      padding:22px;
+
+    }
+
+    .section-title{
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      margin-bottom:24px;
+
+    }
+
+    .section-title h2{
+
+      font-size:28px;
+
+      color:#39ff14;
+
+      font-weight:800;
+
+    }
+
+    .section-title a{
+
+      color:#39ff14;
+
+      font-size:14px;
+
+      font-weight:700;
+
+    }
+
+    /* ====================================
+       FEED
+    ==================================== */
+
+    .feed-item{
+
+      display:flex;
+      align-items:center;
+      gap:15px;
+
+      padding:18px 0;
+
+      border-bottom:1px solid rgba(255,255,255,0.06);
+
+    }
+
+    .feed-item:last-child{
+      border:none;
+    }
+
+    .feed-icon{
+
+      width:46px;
+      height:46px;
+
+      border-radius:50%;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      font-size:18px;
+
+      flex-shrink:0;
+
+    }
+
+    .feed-text{
+
+      flex:1;
+
+      font-size:15px;
+
+      line-height:1.6;
+
+    }
+
+    .feed-time{
+
+      color:rgba(255,255,255,0.5);
+
+      font-size:13px;
+
+    }
+
+    /* ====================================
+       REFERRAL
+    ==================================== */
+
+    .referral-code{
+
+      width:100%;
+
+      border:2px dashed #39ff14;
+
+      border-radius:18px;
+
+      padding:24px;
+
+      text-align:center;
+
+      margin:20px 0;
+
+    }
+
+    .referral-code h1{
+
+      color:#39ff14;
+
+      font-size:48px;
+
+      font-weight:900;
+
+    }
+
+    .share-buttons{
+
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+
+      gap:12px;
+
+      margin-top:20px;
+
+    }
+
+    .share-btn{
+
+      height:58px;
+
+      border-radius:14px;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      font-weight:700;
+
+      font-size:15px;
+
+    }
+
+    .whatsapp{
+      background:#1db954;
+    }
+
+    .instagram{
+      background:linear-gradient(45deg,#ff0050,#ff7a00);
+    }
+
+    .more{
+      background:#222;
+    }
+
+    /* ====================================
+       REPORT ISSUE
+    ==================================== */
+
+    .report-box{
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      gap:20px;
+
+    }
+
+    .report-btn{
+
+      margin-top:20px;
+
+      width:100%;
+
+      height:60px;
+
+      border:none;
+
+      border-radius:16px;
+
+      background:#39ff14;
+
+      color:black;
+
+      font-size:18px;
+      font-weight:800;
+
+    }
+
+    /* ====================================
+       CAMPAIGNS
+    ==================================== */
+
+    .campaigns{
+
+      display:flex;
+
+      gap:16px;
+
+      overflow-x:auto;
+
+    }
+
+    .campaigns::-webkit-scrollbar{
+      display:none;
+    }
+
+    .campaign-card{
+
+      min-width:240px;
+
+      background:#111;
+
+      border-radius:20px;
+
+      overflow:hidden;
+
+      border:1px solid rgba(255,255,255,0.08);
+
+    }
+
+    .campaign-card img{
+
+      width:100%;
+      height:140px;
+
+      object-fit:cover;
+
+    }
+
+    .campaign-content{
+      padding:16px;
+    }
+
+    .campaign-content h3{
+
+      font-size:22px;
+
+      line-height:1.5;
+
+      margin-bottom:14px;
+
+    }
+
+    .progress{
+
+      width:100%;
+      height:10px;
+
+      background:#222;
+
+      border-radius:999px;
+
+      overflow:hidden;
+
+      margin-top:14px;
+
+    }
+
+    .progress div{
+
+      height:100%;
+
+      background:#39ff14;
+
+    }
+
+    /* ====================================
+       MESSAGE
+    ==================================== */
+
+    .message-box{
+
+      background:
+      linear-gradient(
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.8)
+      ),
+      url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop');
+
+      background-size:cover;
+      background-position:center;
+
+    }
+
+    .message-box p{
+
+      margin-top:20px;
+
+      font-size:24px;
+
+      line-height:1.8;
+
+      color:white;
+
+    }
+
+    .message-box span{
+
+      color:#39ff14;
+
+      font-weight:700;
+
+    }
+
+    /* ====================================
+       BOTTOM NAV
+    ==================================== */
+
+    .bottom-nav{
+
+      position:fixed;
+
+      bottom:0;
+      left:0;
+
+      width:100%;
+
+      height:92px;
+
+      background:#050505;
+
+      border-top:1px solid rgba(255,255,255,0.08);
+
+      display:flex;
+      justify-content:space-around;
+      align-items:center;
+
+      z-index:999;
+
+    }
+
+    .nav-item{
+
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+
+      gap:8px;
+
+      color:rgba(255,255,255,0.72);
+
+      font-size:13px;
+
+    }
+
+    .nav-item i{
+      font-size:24px;
+    }
+
+    .nav-active{
+      color:#39ff14;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- BACKGROUND -->
+
+  <div class="background"></div>
+  <div class="grid"></div>
+
+  <!-- TOPBAR -->
+
+  <div class="topbar">
+
+    <i class="fa-solid fa-bars menu-btn"></i>
+
+    <div class="logo">
+
+      <h1>
+        REBUILD <span>INDIA</span> 🇮🇳
+      </h1>
+
+      <p>
+        A MOVEMENT BY THE PEOPLE
+      </p>
+
+    </div>
+
+    <div class="bell">
+
+      <i class="fa-regular fa-bell"></i>
+
+      <div class="bell-count">
+        5
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- PROFILE -->
+
+  <div class="profile-card">
+
+    <div class="profile-top">
+
+      <img
+      id="profileImage"
+      class="profile-img">
+
+      <div class="profile-info">
+
+        <h2>
+          Welcome back,<br>
+          <span id="profileName"></span> 👋
+        </h2>
+
+        <div class="role" id="profileRole">
+          MEMBER
+        </div>
+
+        <div class="member-id" id="profileMemberId">
+          RI-0000
+        </div>
+
+        <div class="join-date" id="joinDate">
+          Joined
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- STATS -->
+
+  <div class="stats">
+
+    <div class="stat-card">
+
+      <i class="fa-solid fa-users green"></i>
+
+      <h3>TOTAL MEMBERS</h3>
+
+      <h2 id="memberCount">0</h2>
+
+      <p>LIVE MOVEMENT</p>
+
+    </div>
+
+    <div class="stat-card">
+
+      <i class="fa-solid fa-location-dot yellow"></i>
+
+      <h3>DISTRICTS ACTIVE</h3>
+
+      <h2>31</h2>
+
+      <p>+3 THIS MONTH</p>
+
+    </div>
+
+    <div class="stat-card">
+
+      <i class="fa-solid fa-file blue"></i>
+
+      <h3>REPORTS</h3>
+
+      <h2>5,281</h2>
+
+      <p>+532 THIS WEEK</p>
+
+    </div>
+
+    <div class="stat-card">
+
+      <i class="fa-solid fa-flag purple"></i>
+
+      <h3>CAMPAIGNS</h3>
+
+      <h2>12</h2>
+
+      <p>+2 THIS WEEK</p>
+
+    </div>
+
+  </div>
+
+  <!-- MOVEMENT FEED -->
+
+  <div class="section">
+
+    <div class="section-title">
+
+      <h2>
+        MOVEMENT FEED
+      </h2>
+
+      <a href="#">
+        View All
+      </a>
+
+    </div>
+
+    <div class="feed-item">
+
+      <div class="feed-icon green">
+        <i class="fa-solid fa-users"></i>
+      </div>
+
+      <div class="feed-text">
+        Bangalore Clean Governance Campaign launched successfully!
+      </div>
+
+      <div class="feed-time">
+        2h ago
+      </div>
+
+    </div>
+
+    <div class="feed-item">
+
+      <div class="feed-icon yellow">
+        <i class="fa-solid fa-user-plus"></i>
+      </div>
+
+      <div class="feed-text">
+        124 new builders joined Rebuild India
+      </div>
+
+      <div class="feed-time">
+        3h ago
+      </div>
+
+    </div>
+
+    <div class="feed-item">
+
+      <div class="feed-icon purple">
+        <i class="fa-solid fa-trophy"></i>
+      </div>
+
+      <div class="feed-text">
+        Congratulations to top district volunteers this week!
+      </div>
+
+      <div class="feed-time">
+        1d ago
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- REFERRAL -->
+
+  <div class="section">
+
+    <div class="section-title">
+
+      <h2>
+        REFER & GROW
+      </h2>
+
+    </div>
+
+    <p>
+      YOUR REFERRAL CODE
+    </p>
+
+    <div class="referral-code">
+
+      <h1 id="referralCode">
+        RI-0000
+      </h1>
+
+    </div>
+
+    <div class="share-buttons">
+
+      <div class="share-btn whatsapp">
+        WhatsApp
+      </div>
+
+      <div class="share-btn instagram">
+        Instagram
+      </div>
+
+      <div class="share-btn more">
+        More
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- REPORT -->
+
+  <div class="section">
+
+    <div class="section-title">
+
+      <h2>
+        REPORT AN ISSUE
+      </h2>
+
+    </div>
+
+    <div class="report-box">
+
+      <div>
+
+        <p style="line-height:1.8; color:rgba(255,255,255,0.75);">
+          See corruption?
+          Report it.
+          Be the change.
+        </p>
+
+      </div>
+
+      <i
+      class="fa-solid fa-shield-halved green"
+      style="font-size:72px;"></i>
+
+    </div>
+
+    <button class="report-btn">
+      Report Now →
+    </button>
+
+  </div>
+
+  <!-- CAMPAIGNS -->
+
+  <div class="section">
+
+    <div class="section-title">
+
+      <h2>
+        ACTIVE CAMPAIGNS
+      </h2>
+
+      <a href="#">
+        View All
+      </a>
+
+    </div>
+
+    <div class="campaigns">
+
+      <div class="campaign-card">
+
+        <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="campaign-content">
+
+          <h3>
+            Clean India<br>
+            Green India
+          </h3>
+
+          <p>
+            12,421 Builders
+          </p>
+
+          <div class="progress">
+            <div style="width:76%;"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="campaign-card">
+
+        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="campaign-content">
+
+          <h3>
+            Corruption<br>
+            Mukt Bharat
+          </h3>
+
+          <p>
+            8,531 Builders
+          </p>
+
+          <div class="progress">
+            <div style="width:58%;"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="campaign-card">
+
+        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="campaign-content">
+
+          <h3>
+            Education<br>
+            For All
+          </h3>
+
+          <p>
+            6,891 Builders
+          </p>
+
+          <div class="progress">
+            <div style="width:64%;"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- MESSAGE -->
+
+  <div class="section message-box">
+
+    <div class="section-title">
+
+      <h2>
+        TODAY’S MESSAGE
+      </h2>
+
+    </div>
+
+    <p>
+      “The power to change India is in the hands of its people.”
+    </p>
+
+    <br>
+
+    <span>
+      — Rebuild India
+    </span>
+
+  </div>
+
+  <!-- BOTTOM NAV -->
+
+  <div class="bottom-nav">
+
+    <div class="nav-item nav-active">
+      <i class="fa-solid fa-house"></i>
+      Dashboard
+    </div>
+
+    <div class="nav-item">
+      <i class="fa-solid fa-tower-broadcast"></i>
+      Feed
+    </div>
+
+    <div class="nav-item">
+      <i class="fa-solid fa-user-plus"></i>
+      Refer
+    </div>
+
+    <div class="nav-item">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      Report
+    </div>
+
+    <div class="nav-item">
+      <i class="fa-solid fa-user"></i>
+      Profile
+    </div>
+
+  </div>
+
+  <!-- FIREBASE -->
+
+  <script type="module">
+
+    import { initializeApp }
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+    import {
+      getFirestore,
+      collection,
+      getDocs,
+      doc,
+      getDoc
+    }
+
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    // FIREBASE CONFIG
+
+    const firebaseConfig = {
+
+      apiKey: "AIzaSyC3bNRxf8kJDKkucTLVKktba_ulpphKc8o",
+
+      authDomain: "rebuildbharath-658a9.firebaseapp.com",
+
+      projectId: "rebuildbharath-658a9",
+
+      storageBucket: "rebuildbharath-658a9.firebasestorage.app",
+
+      messagingSenderId: "307480289915",
+
+      appId: "1:307480289915:web:31253b04dbd0498d6d78de",
+
+      measurementId: "G-DFC55C8M5N"
+
+    };
+
+    const app = initializeApp(firebaseConfig);
+
+    const db = getFirestore(app);
+
+    // GET USER EMAIL
+
+    const email =
+    localStorage.getItem("userEmail");
+
+    // GET MEMBER DATA
+
+    async function loadUser(){
+
+      const docRef =
+      doc(db,"members",email);
+
+      const docSnap =
+      await getDoc(docRef);
+
+      if(docSnap.exists()){
+
+        const data =
+        docSnap.data();
+
+        document.getElementById("profileName")
+        .innerText = data.name;
+
+        document.getElementById("profileImage")
+        .src = data.photo;
+
+        document.getElementById("profileRole")
+        .innerText = data.role;
+
+        document.getElementById("profileMemberId")
+        .innerText = data.memberId;
+
+        document.getElementById("referralCode")
+        .innerText = data.memberId;
+
+        const joined =
+        new Date(data.joinedAt.seconds * 1000);
+
+        document.getElementById("joinDate")
+        .innerText =
+        "Joined on " +
+        joined.toDateString();
+
+      }
+
+    }
+
+    loadUser();
+
+    // LIVE MEMBER COUNT
+
+    async function loadStats(){
+
+      const querySnapshot =
+      await getDocs(collection(db, "members"));
+
+      document.getElementById("memberCount")
+      .innerText =
+      querySnapshot.size.toLocaleString();
+
+    }
+
+    loadStats();
+
+  </script>
+
+</body>
+</html>
