@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Welcome To Rebuild India</title>
+
+  <!-- GOOGLE FONT -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Inter',sans-serif;
+    }
+
+    body{
+
+      background:#020202;
+
+      overflow:hidden;
+
+      color:white;
+
+    }
+
+    /* =========================
+       BACKGROUND
+    ========================== */
+
+    .background{
+
+      position:fixed;
+      inset:0;
+
+      background:
+      radial-gradient(
+      circle at top right,
+      rgba(57,255,20,0.12),
+      transparent 35%
+      ),
+      linear-gradient(
+      rgba(0,0,0,0.92),
+      rgba(0,0,0,0.96)
+      );
+
+      z-index:-3;
+
+    }
+
+    /* =========================
+       GRID
+    ========================== */
+
+    .grid{
+
+      position:fixed;
+      inset:0;
+
+      background-image:
+      linear-gradient(rgba(57,255,20,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(57,255,20,0.04) 1px, transparent 1px);
+
+      background-size:60px 60px;
+
+      z-index:-2;
+
+    }
+
+    /* =========================
+       MAIN
+    ========================== */
+
+    .main{
+
+      width:100%;
+      min-height:100vh;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      flex-direction:column;
+
+      text-align:center;
+
+      padding:40px;
+
+      position:relative;
+
+    }
+
+    /* =========================
+       INDIA MAP
+    ========================== */
+
+    .india-map{
+
+      width:420px;
+
+      max-width:90%;
+
+      margin-bottom:40px;
+
+      animation:
+      floatMap 5s ease-in-out infinite alternate;
+
+      filter:
+      drop-shadow(0 0 30px rgba(57,255,20,0.35));
+
+    }
+
+    @keyframes floatMap{
+
+      from{
+        transform:translateY(0px);
+      }
+
+      to{
+        transform:translateY(-18px);
+      }
+
+    }
+
+    /* =========================
+       TEXT
+    ========================== */
+
+    .mini-title{
+
+      color:#39ff14;
+
+      font-size:14px;
+      font-weight:700;
+
+      letter-spacing:3px;
+
+      margin-bottom:24px;
+
+      text-transform:uppercase;
+
+    }
+
+    .title{
+
+      font-size:72px;
+
+      line-height:1.05;
+
+      font-weight:900;
+
+      margin-bottom:30px;
+
+      text-transform:uppercase;
+
+    }
+
+    .title span{
+      color:#39ff14;
+    }
+
+    .message{
+
+      width:90%;
+      max-width:900px;
+
+      color:rgba(255,255,255,0.78);
+
+      font-size:22px;
+
+      line-height:2;
+
+      margin-bottom:45px;
+
+      animation:fadeUp 1.5s ease;
+
+    }
+
+    @keyframes fadeUp{
+
+      from{
+        opacity:0;
+        transform:translateY(50px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+
+    }
+
+    /* =========================
+       MEMBER ID
+    ========================== */
+
+    .member-box{
+
+      padding:24px 40px;
+
+      border-radius:24px;
+
+      background:rgba(255,255,255,0.04);
+
+      border:1px solid rgba(57,255,20,0.18);
+
+      margin-bottom:40px;
+
+      backdrop-filter:blur(20px);
+
+    }
+
+    .member-box p{
+
+      color:rgba(255,255,255,0.65);
+
+      margin-bottom:10px;
+
+      font-size:14px;
+
+      letter-spacing:2px;
+
+    }
+
+    .member-box h2{
+
+      font-size:38px;
+
+      color:#39ff14;
+
+      font-weight:900;
+
+    }
+
+    /* =========================
+       BUTTON
+    ========================== */
+
+    .dashboard-btn{
+
+      display:inline-flex;
+
+      justify-content:center;
+      align-items:center;
+
+      padding:22px 42px;
+
+      background:#39ff14;
+
+      color:black;
+
+      border-radius:18px;
+
+      font-size:18px;
+      font-weight:800;
+
+      transition:0.4s;
+
+    }
+
+    .dashboard-btn:hover{
+
+      transform:translateY(-4px);
+
+      box-shadow:
+      0 0 35px rgba(57,255,20,0.45);
+
+    }
+
+    /* =========================
+       PARTICLES
+    ========================== */
+
+    .particle{
+
+      position:absolute;
+
+      width:6px;
+      height:6px;
+
+      border-radius:50%;
+
+      background:#39ff14;
+
+      opacity:0.5;
+
+      animation:particleMove linear infinite;
+
+    }
+
+    @keyframes particleMove{
+
+      from{
+        transform:translateY(100vh);
+      }
+
+      to{
+        transform:translateY(-100vh);
+      }
+
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media(max-width:700px){
+
+      .title{
+        font-size:42px;
+      }
+
+      .message{
+        font-size:17px;
+      }
+
+      .member-box h2{
+        font-size:28px;
+      }
+
+      .dashboard-btn{
+        width:100%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="background"></div>
+  <div class="grid"></div>
+
+  <!-- PARTICLES -->
+
+  <div class="particle" style="left:10%; animation-duration:12s;"></div>
+  <div class="particle" style="left:25%; animation-duration:18s;"></div>
+  <div class="particle" style="left:40%; animation-duration:14s;"></div>
+  <div class="particle" style="left:60%; animation-duration:20s;"></div>
+  <div class="particle" style="left:80%; animation-duration:16s;"></div>
+
+  <!-- MAIN -->
+
+  <section class="main">
+
+    <!-- INDIA MAP -->
+
+    <img
+    src="india.png"
+    class="india-map">
+
+    <!-- TEXT -->
+
+    <p class="mini-title">
+      REBUILD INDIA 🇮🇳
+    </p>
+
+    <h1 class="title">
+      MY CHILD...<br>
+      <span>THANK YOU.</span>
+    </h1>
+
+    <p class="message">
+
+      I have suffered through corruption,
+      broken systems and lost opportunities for decades.
+
+      Millions still struggle for education,
+      healthcare, justice and development.
+
+      Thank you for standing for change.
+
+      Thank you for joining Rebuild India.
+
+      Together,
+      we will rebuild this nation.
+
+      Bring your friends,
+      family and community with you.
+
+      India needs builders.
+
+    </p>
+
+    <!-- MEMBER ID -->
+
+    <div class="member-box">
+
+      <p>
+        YOUR MOVEMENT ID
+      </p>
+
+      <h2 id="memberId"></h2>
+
+    </div>
+
+    <!-- BUTTON -->
+
+    <a
+    href="dashboard.html"
+    class="dashboard-btn">
+
+      ENTER MOVEMENT DASHBOARD
+
+    </a>
+
+  </section>
+
+  <!-- SCRIPT -->
+
+  <script>
+
+    // SHOW MEMBER ID
+
+    const memberId =
+    localStorage.getItem("memberId");
+
+    document.getElementById("memberId")
+    .innerText = memberId;
+
+  </script>
+
+</body>
+  </html>
