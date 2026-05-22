@@ -1181,6 +1181,181 @@ EDITORIAL PREMIUM DASHBOARD
   }
 
 }
+    /* =====================================
+   GALLERY SECTION
+===================================== */
+
+.gallery-section{
+
+  width:100%;
+
+  padding:18px;
+
+}
+
+/* =====================================
+   TOP
+===================================== */
+
+.gallery-top{
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:14px;
+
+}
+
+/* TITLE */
+
+.gallery-title{
+
+  font-family:'Anton',sans-serif;
+
+  font-size:36px;
+
+  line-height:1;
+
+  text-transform:uppercase;
+
+  color:#111;
+
+}
+
+/* VIEW */
+
+.view-all{
+
+  text-decoration:none;
+
+  color:#111;
+
+  font-size:15px;
+
+  letter-spacing:2px;
+
+  font-weight:700;
+
+}
+
+/* =====================================
+   CARD
+===================================== */
+
+.gallery-card{
+
+  width:100%;
+
+  height:260px;
+
+  border:2px solid #111;
+
+  overflow:hidden;
+
+  position:relative;
+
+  display:block;
+
+  text-decoration:none;
+
+  background:#140D09;
+
+}
+
+/* IMAGE */
+
+.gallery-image{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  filter:brightness(0.7);
+
+}
+
+/* =====================================
+   OVERLAY
+===================================== */
+
+.gallery-overlay{
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  linear-gradient(
+  to top,
+  rgba(0,0,0,0.82),
+  rgba(0,0,0,0.1)
+  );
+
+  display:flex;
+  justify-content:flex-end;
+  align-items:flex-end;
+
+  padding:20px;
+
+}
+
+/* TEXT */
+
+.gallery-text{
+
+  font-family:'Anton',sans-serif;
+
+  font-size:58px;
+
+  line-height:0.9;
+
+  text-transform:uppercase;
+
+  color:white;
+
+  text-align:right;
+
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width:430px){
+
+  .gallery-section{
+
+    padding:14px 18px 0;
+
+  }
+
+  .gallery-title{
+
+    font-size:30px;
+
+  }
+
+  .view-all{
+
+    font-size:12px;
+
+  }
+
+  .gallery-card{
+
+    height:190px;
+
+  }
+
+  .gallery-text{
+
+    font-size:42px;
+
+  }
+
+}
   </style>
 
 </head>
@@ -1801,6 +1976,63 @@ ADD THIS BELOW SLIDER SECTION
   </div>
 
 </section>
+
+  <!-- =====================================
+     GALLERY PORTAL
+     ADD BELOW REPORT SECTION
+===================================== -->
+
+<section class="gallery-section">
+
+  <!-- TOP -->
+
+  <div class="gallery-top">
+
+    <div class="gallery-title">
+
+      GALLERY
+
+    </div>
+
+    <a
+    href="gallery.html"
+    class="view-all">
+
+      VIEW ALL →
+
+    </a>
+
+  </div>
+
+  <!-- IMAGE CARD -->
+
+  <a
+  href="gallery.html"
+  class="gallery-card">
+
+    <!-- IMAGE -->
+
+    <img
+    id="galleryImage"
+    class="gallery-image"
+    src="">
+
+    <!-- OVERLAY -->
+
+    <div class="gallery-overlay">
+
+      <div class="gallery-text">
+
+        VIEW<br>
+        PHOTOS
+
+      </div>
+
+    </div>
+
+  </a>
+
+</section>
   <!-- =====================================
        FIREBASE
   ====================================== -->
@@ -2065,6 +2297,83 @@ console.log(error);
 }
 
 loadMembers();
+
+  </script>
+  <script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getFirestore,
+doc,
+getDoc
+}
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+/* FIREBASE */
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyC3bNRxf8kJDKkucTLVKktba_ulpphKc8o",
+
+authDomain: "rebuildbharath-658a9.firebaseapp.com",
+
+projectId: "rebuildbharath-658a9",
+
+storageBucket: "rebuildbharath-658a9.firebasestorage.app",
+
+messagingSenderId: "307480289915",
+
+appId: "1:307480289915:web:31253b04dbd0498d6d78de",
+
+measurementId: "G-DFC55C8M5N"
+
+};
+
+/* INIT */
+
+const app =
+initializeApp(firebaseConfig);
+
+const db =
+getFirestore(app);
+
+/* LOAD GALLERY */
+
+async function loadGallery(){
+
+try{
+
+const docRef =
+doc(db,"settings","gallery");
+
+const docSnap =
+await getDoc(docRef);
+
+if(docSnap.exists()){
+
+const data =
+docSnap.data();
+
+document.getElementById("galleryImage")
+.src =
+data.coverImage || "";
+
+}
+
+}
+
+catch(error){
+
+console.log(error);
+
+}
+
+}
+
+loadGallery();
 
   </script>
 </body>
