@@ -642,6 +642,230 @@ EDITORIAL PREMIUM DASHBOARD
   }
 
 }
+    /* =====================================
+   EVENT SECTION
+===================================== */
+
+.event-section{
+
+  width:100%;
+
+  padding:18px 18px 0;
+
+}
+
+/* =====================================
+   HEADING
+===================================== */
+
+.event-head{
+
+  font-family:'Anton',sans-serif;
+
+  font-size:34px;
+
+  line-height:1;
+
+  text-transform:uppercase;
+
+  margin-bottom:14px;
+
+  color:#111;
+
+}
+
+/* =====================================
+   EVENT CARD
+===================================== */
+
+.event-card{
+
+  width:100%;
+
+  height:460px;
+
+  border:2px solid #111;
+
+  position:relative;
+
+  overflow:hidden;
+
+  background:#1A120D;
+
+}
+
+/* IMAGE */
+
+.event-image{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  filter:brightness(0.62);
+
+}
+
+/* =====================================
+   OVERLAY
+===================================== */
+
+.event-overlay{
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  linear-gradient(
+  to top,
+  rgba(0,0,0,0.9),
+  rgba(0,0,0,0.2)
+  );
+
+  padding:22px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+
+  color:white;
+
+}
+
+/* MINI */
+
+.event-mini{
+
+  color:#D96B1D;
+
+  font-size:12px;
+
+  letter-spacing:4px;
+
+  margin-bottom:12px;
+
+  font-weight:700;
+
+}
+
+/* TITLE */
+
+.event-overlay h2{
+
+  font-family:'Anton',sans-serif;
+
+  font-size:56px;
+
+  line-height:0.95;
+
+  text-transform:uppercase;
+
+  margin-bottom:16px;
+
+}
+
+/* DESC */
+
+.event-desc{
+
+  font-size:18px;
+
+  line-height:1.6;
+
+  color:#ece1d5;
+
+  margin-bottom:20px;
+
+}
+
+/* =====================================
+   DETAILS
+===================================== */
+
+.event-details{
+
+  width:100%;
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr 1fr;
+
+  border-top:1px solid rgba(255,255,255,0.2);
+
+}
+
+/* BOX */
+
+.detail-box{
+
+  padding-top:16px;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:6px;
+
+}
+
+/* LABEL */
+
+.detail-label{
+
+  color:#D96B1D;
+
+  font-size:11px;
+
+  letter-spacing:3px;
+
+  font-weight:700;
+
+}
+
+/* VALUE */
+
+.detail-value{
+
+  font-size:15px;
+
+  line-height:1.5;
+
+  color:white;
+
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width:430px){
+
+  .event-card{
+
+    height:400px;
+
+  }
+
+  .event-overlay h2{
+
+    font-size:40px;
+
+  }
+
+  .event-desc{
+
+    font-size:15px;
+
+  }
+
+  .detail-value{
+
+    font-size:12px;
+
+  }
+
+}
   </style>
 
 </head>
@@ -1017,6 +1241,130 @@ ADD THIS BELOW SLIDER SECTION
 
     </div>
 
+  </div> 
+</section>
+<!-- =====================================
+     UPCOMING EVENT SECTION
+     ADD BELOW ACTION SECTION
+===================================== -->
+
+<section class="event-section">
+
+  <!-- TITLE -->
+
+  <div class="event-head">
+
+    UPCOMING EVENT
+
+  </div>
+
+  <!-- EVENT CARD -->
+
+  <div class="event-card">
+
+    <!-- EVENT IMAGE -->
+
+    <img
+    id="eventImage"
+    class="event-image"
+    src="">
+
+    <!-- OVERLAY -->
+
+    <div class="event-overlay">
+
+      <div class="event-mini">
+
+        LIVE MOVEMENT EVENT
+
+      </div>
+
+      <!-- TITLE -->
+
+      <h2 id="eventTitle">
+
+        Loading Event...
+
+      </h2>
+
+      <!-- DESCRIPTION -->
+
+      <p
+      class="event-desc"
+      id="eventDescription">
+
+        Loading description...
+
+      </p>
+
+      <!-- DETAILS -->
+
+      <div class="event-details">
+
+        <!-- LOCATION -->
+
+        <div class="detail-box">
+
+          <span class="detail-label">
+
+            LOCATION
+
+          </span>
+
+          <span
+          class="detail-value"
+          id="eventLocation">
+
+            Loading...
+
+          </span>
+
+        </div>
+
+        <!-- VENUE -->
+
+        <div class="detail-box">
+
+          <span class="detail-label">
+
+            VENUE
+
+          </span>
+
+          <span
+          class="detail-value"
+          id="eventVenue">
+
+            Loading...
+
+          </span>
+
+        </div>
+
+        <!-- DATE -->
+
+        <div class="detail-box">
+
+          <span class="detail-label">
+
+            DATE
+
+          </span>
+
+          <span
+          class="detail-value"
+          id="eventDate">
+
+            Loading...
+
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 
 </section>
@@ -1106,6 +1454,114 @@ ADD THIS BELOW SLIDER SECTION
     loadUser();
 
   </script>
+<script type="module">
 
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getFirestore,
+doc,
+getDoc
+}
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+/* FIREBASE */
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyC3bNRxf8kJDKkucTLVKktba_ulpphKc8o",
+
+authDomain: "rebuildbharath-658a9.firebaseapp.com",
+
+projectId: "rebuildbharath-658a9",
+
+storageBucket: "rebuildbharath-658a9.firebasestorage.app",
+
+messagingSenderId: "307480289915",
+
+appId: "1:307480289915:web:31253b04dbd0498d6d78de",
+
+measurementId: "G-DFC55C8M5N"
+
+};
+
+/* INIT */
+
+const app =
+initializeApp(firebaseConfig);
+
+const db =
+getFirestore(app);
+
+/* LOAD EVENT */
+
+async function loadEvent(){
+
+try{
+
+const docRef =
+doc(db,"settings","upcomingEvent");
+
+const docSnap =
+await getDoc(docRef);
+
+if(docSnap.exists()){
+
+const data =
+docSnap.data();
+
+/* IMAGE */
+
+document.getElementById("eventImage")
+.src =
+data.image || "";
+
+/* TITLE */
+
+document.getElementById("eventTitle")
+.innerText =
+data.title || "Upcoming Event";
+
+/* DESC */
+
+document.getElementById("eventDescription")
+.innerText =
+data.description || "";
+
+/* LOCATION */
+
+document.getElementById("eventLocation")
+.innerText =
+data.location || "";
+
+/* VENUE */
+
+document.getElementById("eventVenue")
+.innerText =
+data.venue || "";
+
+/* DATE */
+
+document.getElementById("eventDate")
+.innerText =
+data.date || "";
+
+}
+
+}
+
+catch(error){
+
+console.log(error);
+
+}
+
+}
+
+loadEvent();
+
+  </script>
 </body>
 </html>
