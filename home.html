@@ -1,1 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>REBUILD INDIA</title>
+
+  <!-- FONTS -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+
+      background:#EFE7D8;
+
+      overflow-x:hidden;
+
+      color:#120B08;
+
+      font-family:'Inter',sans-serif;
+
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================== */
+
+    .navbar{
+
+      width:92%;
+
+      position:fixed;
+
+      top:22px;
+      left:50%;
+
+      transform:translateX(-50%);
+
+      z-index:9999;
+
+      background:#120B08;
+
+      padding:22px 24px;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+    }
+
+    .logo{
+
+      display:flex;
+      align-items:center;
+      gap:16px;
+
+    }
+
+    .logo-circle{
+
+      width:68px;
+      height:68px;
+
+      background:#D96B1D;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      color:#fff;
+
+      font-family:'Bebas Neue',sans-serif;
+
+      font-size:32px;
+
+      letter-spacing:1px;
+
+    }
+
+    .logo-text h2{
+
+      font-family:'Bebas Neue',sans-serif;
+
+      font-size:52px;
+
+      line-height:0.9;
+
+      letter-spacing:1px;
+
+      color:#EFE7D8;
+
+    }
+
+    .logo-text span{
+      color:#D96B1D;
+    }
+
+    .logo-text p{
+
+      color:rgba(239,231,216,0.7);
+
+      font-size:14px;
+
+      margin-top:5px;
+
+    }
+
+    .menu{
+
+      color:#EFE7D8;
+
+      font-size:48px;
+
+      font-family:'Bebas Neue',sans-serif;
+
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero{
+
+      width:100%;
+      min-height:100vh;
+
+      position:relative;
+
+      display:flex;
+      align-items:center;
+
+      overflow:hidden;
+
+      background:
+      linear-gradient(
+      rgba(18,11,8,0.68),
+      rgba(18,11,8,0.78)
+      ),
+      url('https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=1920&auto=format&fit=crop');
+
+      background-size:cover;
+      background-position:center;
+
+    }
+
+    .hero-overlay{
+
+      position:absolute;
+
+      inset:0;
+
+      background:
+      linear-gradient(
+      90deg,
+      rgba(239,231,216,0.18),
+      transparent
+      );
+
+    }
+
+    .hero-content{
+
+      position:relative;
+
+      z-index:2;
+
+      width:100%;
+
+      padding:
+      170px
+      7%
+      80px;
+
+    }
+
+    .top-line{
+
+      color:#D96B1D;
+
+      font-size:17px;
+
+      font-weight:700;
+
+      letter-spacing:2px;
+
+      text-transform:uppercase;
+
+      margin-bottom:35px;
+
+      line-height:1.6;
+
+    }
+
+    .hero-title{
+
+      font-family:'Bebas Neue',sans-serif;
+
+      font-size:140px;
+
+      line-height:0.88;
+
+      letter-spacing:2px;
+
+      color:#EFE7D8;
+
+      margin-bottom:35px;
+
+      text-transform:uppercase;
+
+    }
+
+    .hero-title span{
+      color:#D96B1D;
+    }
+
+    .hero-description{
+
+      width:70%;
+
+      font-size:24px;
+
+      line-height:1.8;
+
+      color:rgba(239,231,216,0.82);
+
+      margin-bottom:55px;
+
+    }
+
+    /* =========================
+       BUTTONS
+    ========================== */
+
+    .hero-buttons{
+      display:flex;
+      gap:18px;
+    }
+
+    .primary-btn{
+
+      background:#D96B1D;
+
+      color:#fff;
+
+      padding:
+      22px
+      42px;
+
+      font-size:15px;
+
+      font-weight:700;
+
+      letter-spacing:1px;
+
+      text-transform:uppercase;
+
+      transition:0.4s;
+
+    }
+
+    .primary-btn:hover{
+
+      background:#b85510;
+
+    }
+
+    .secondary-btn{
+
+      border:
+      1px solid rgba(239,231,216,0.2);
+
+      color:#EFE7D8;
+
+      padding:
+      22px
+      42px;
+
+      font-size:15px;
+
+      font-weight:700;
+
+      letter-spacing:1px;
+
+      text-transform:uppercase;
+
+      transition:0.4s;
+
+    }
+
+    .secondary-btn:hover{
+
+      background:#EFE7D8;
+
+      color:#120B08;
+
+    }
+
+    /* =========================
+       EDITORIAL STRIP
+    ========================== */
+
+    .editorial-strip{
+
+      width:100%;
+
+      background:#120B08;
+
+      color:#EFE7D8;
+
+      padding:22px 0;
+
+      overflow:hidden;
+
+      white-space:nowrap;
+
+    }
+
+    .editorial-strip h2{
+
+      font-family:'Bebas Neue',sans-serif;
+
+      font-size:58px;
+
+      letter-spacing:3px;
+
+      display:inline-block;
+
+      animation:scrollText 18s linear infinite;
+
+    }
+
+    .editorial-strip span{
+      color:#D96B1D;
+    }
+
+    @keyframes scrollText{
+
+      from{
+        transform:translateX(0);
+      }
+
+      to{
+        transform:translateX(-100%);
+      }
+
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media(max-width:900px){
+
+      .hero-title{
+        font-size:100px;
+      }
+
+      .hero-description{
+        width:90%;
+      }
+
+    }
+
+    @media(max-width:700px){
+
+      .navbar{
+
+        width:94%;
+
+        padding:18px 18px;
+
+      }
+
+      .logo-circle{
+
+        width:52px;
+        height:52px;
+
+        font-size:24px;
+
+      }
+
+      .logo-text h2{
+
+        font-size:34px;
+
+      }
+
+      .logo-text p{
+
+        font-size:11px;
+
+      }
+
+      .menu{
+
+        font-size:40px;
+
+      }
+
+      .hero-content{
+
+        padding:
+        160px
+        7%
+        80px;
+
+      }
+
+      .top-line{
+
+        font-size:14px;
+
+        margin-bottom:28px;
+
+      }
+
+      .hero-title{
+
+        font-size:72px;
+
+        line-height:0.92;
+
+        margin-bottom:28px;
+
+      }
+
+      .hero-description{
+
+        width:100%;
+
+        font-size:18px;
+
+        line-height:1.8;
+
+      }
+
+      .hero-buttons{
+
+        flex-direction:column;
+
+      }
+
+      .primary-btn,
+      .secondary-btn{
+
+        width:100%;
+
+        text-align:center;
+
+      }
+
+      .editorial-strip h2{
+
+        font-size:38px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVBAR
+  ========================== -->
+
+  <nav class="navbar">
+
+    <div class="logo">
+
+      <div class="logo-circle">
+        RI
+      </div>
+
+      <div class="logo-text">
+
+        <h2>
+          REBUILD <span>INDIA</span>
+        </h2>
+
+        <p>
+          Stop Corruption. Build India.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="menu">
+      ☰
+    </div>
+
+  </nav>
+
+  <!-- =========================
+       HERO SECTION
+  ========================== -->
+
+  <section class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+      <p class="top-line">
+        WE DO NOT JOIN HANDS WITH EXISTING POLITICAL PARTIES.
+      </p>
+
+      <h1 class="hero-title">
+
+        INDIA HAS<br>
+        ENOUGH MONEY.<br>
+
+        <span>
+          CORRUPTION<br>
+          IS STEALING<br>
+          THE FUTURE.
+        </span>
+
+      </h1>
+
+      <p class="hero-description">
+
+        Every year, lakhs of crores disappear because of corruption.
+        That money could build hospitals, schools, roads, jobs and a stronger future for millions of Indians.
+
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#" class="primary-btn">
+          Join The Movement
+        </a>
+
+        <a href="#" class="secondary-btn">
+          Read Manifesto
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       EDITORIAL STRIP
+  ========================== -->
+
+  <section class="editorial-strip">
+
+    <h1>
+
+      STOP CORRUPTION • BUILD INDIA • PEOPLE OVER POLITICS • TRANSPARENCY • DEVELOPMENT • YOUTH LEADERSHIP • <span>REBUILD INDIA</span> •
+
+    </h1>
+
+  </section>
+
+</body>
+
+</html>
