@@ -479,7 +479,252 @@
       }
 
     }
+/* =========================
+   REALITY SECTION
+========================= */
 
+.reality-section{
+
+  width:100%;
+
+  padding:140px 7%;
+
+  background:#EFE7D8;
+
+}
+
+.reality-top{
+
+  margin-bottom:70px;
+
+}
+
+.reality-mini-title{
+
+  color:#D96B1D;
+
+  font-size:15px;
+
+  font-weight:700;
+
+  letter-spacing:2px;
+
+  margin-bottom:24px;
+
+}
+
+.reality-title{
+
+  font-family:'Bebas Neue',sans-serif;
+
+  font-size:120px;
+
+  line-height:0.92;
+
+  letter-spacing:2px;
+
+  color:#120B08;
+
+  margin-bottom:35px;
+
+}
+
+.reality-title span{
+  color:#D96B1D;
+}
+
+.reality-description{
+
+  width:65%;
+
+  font-size:22px;
+
+  line-height:1.9;
+
+  color:rgba(18,11,8,0.72);
+
+}
+
+/* =========================
+   GRID
+========================= */
+
+.reality-grid{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:0;
+
+}
+
+/* =========================
+   BOXES
+========================= */
+
+.reality-box{
+
+  padding:80px 60px;
+
+  min-height:520px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+
+}
+
+.dark-box{
+
+  background:#120B08;
+
+  color:#EFE7D8;
+
+}
+
+.light-box{
+
+  background:#D96B1D;
+
+  color:#fff;
+
+}
+
+.box-mini{
+
+  font-size:15px;
+
+  font-weight:700;
+
+  letter-spacing:2px;
+
+  margin-bottom:25px;
+
+}
+
+.reality-box h3{
+
+  font-family:'Bebas Neue',sans-serif;
+
+  font-size:90px;
+
+  line-height:0.92;
+
+  letter-spacing:2px;
+
+  margin-bottom:40px;
+
+}
+
+.reality-box ul{
+  list-style:none;
+}
+
+.reality-box ul li{
+
+  font-size:22px;
+
+  line-height:2;
+
+  border-bottom:
+  1px solid rgba(255,255,255,0.15);
+
+  padding:14px 0;
+
+}
+
+/* =========================
+   FUTURE LINE
+========================= */
+
+.future-line{
+
+  padding-top:100px;
+
+}
+
+.future-line h2{
+
+  font-family:'Bebas Neue',sans-serif;
+
+  font-size:130px;
+
+  line-height:0.92;
+
+  letter-spacing:2px;
+
+  color:#120B08;
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+  .reality-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:700px){
+
+  .reality-section{
+
+    padding:90px 7%;
+
+  }
+
+  .reality-title{
+
+    font-size:72px;
+
+  }
+
+  .reality-description{
+
+    width:100%;
+
+    font-size:18px;
+
+  }
+
+  .reality-box{
+
+    padding:50px 35px;
+
+    min-height:auto;
+
+  }
+
+  .reality-box h3{
+
+    font-size:60px;
+
+  }
+
+  .reality-box ul li{
+
+    font-size:18px;
+
+  }
+
+  .future-line{
+
+    padding-top:70px;
+
+  }
+
+  .future-line h2{
+
+    font-size:70px;
+
+  }
+
+}
   </style>
 
 </head>
@@ -581,7 +826,104 @@
     </h1>
 
   </section>
+<!-- =========================
+     REALITY SECTION
+========================= -->
 
+<section class="reality-section">
+
+  <div class="reality-top">
+
+    <p class="reality-mini-title">
+      THE REALITY
+    </p>
+
+    <h2 class="reality-title">
+
+      THE REAL COST<br>
+      OF <span>CORRUPTION</span>
+
+    </h2>
+
+    <p class="reality-description">
+
+      Corruption does not just steal money.
+      It steals infrastructure, healthcare, education and the future of millions.
+
+    </p>
+
+  </div>
+
+  <!-- GRID -->
+
+  <div class="reality-grid">
+
+    <!-- LEFT -->
+
+    <div class="reality-box dark-box">
+
+      <p class="box-mini">
+        CORRUPTION
+      </p>
+
+      <h3>
+        ₹500 FOR<br>
+        A VOTE.
+      </h3>
+
+      <ul>
+
+        <li>Bribery systems</li>
+        <li>Political greed</li>
+        <li>Public money leakage</li>
+        <li>Corrupt governance</li>
+        <li>Broken accountability</li>
+
+      </ul>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="reality-box light-box">
+
+      <p class="box-mini">
+        CONSEQUENCES
+      </p>
+
+      <h3>
+        5 YEARS<br>
+        OF LOSS.
+      </h3>
+
+      <ul>
+
+        <li>Poor roads</li>
+        <li>Weak hospitals</li>
+        <li>Unemployment</li>
+        <li>Education crisis</li>
+        <li>Slow development</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+
+  <div class="future-line">
+
+    <h2>
+
+      THIS IS WHERE<br>
+      YOUR FUTURE WENT.
+
+    </h2>
+
+  </div>
+
+</section>
 </body>
 
 </html>
