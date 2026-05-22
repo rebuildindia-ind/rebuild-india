@@ -520,7 +520,192 @@ EDITORIAL PREMIUM DASHBOARD
       }
 
     }
+/* =====================================
+   ACTION SECTION
+===================================== */
 
+.action-section{
+
+  width:100%;
+
+  padding:34px 18px 0;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:16px;
+
+}
+
+/* =====================================
+   BOX
+===================================== */
+
+.action-box{
+
+  width:100%;
+
+  min-height:120px;
+
+  border:2px solid #111;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:18px;
+
+  position:relative;
+
+  overflow:hidden;
+
+}
+
+/* DONATE */
+
+.donate-box{
+
+  background:#1F5C3F;
+
+  color:#fff;
+
+}
+
+/* REFER */
+
+.refer-box{
+
+  background:#D96B1D;
+
+  color:#fff;
+
+}
+
+/* SUGGEST */
+
+.suggest-box{
+
+  background:#1A120D;
+
+  color:#fff;
+
+}
+
+/* =====================================
+   ICON
+===================================== */
+
+.action-icon{
+
+  width:78px;
+  height:78px;
+
+  border:2px solid rgba(255,255,255,0.85);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:34px;
+
+  flex-shrink:0;
+
+}
+
+/* =====================================
+   CONTENT
+===================================== */
+
+.action-content{
+
+  flex:1;
+
+  padding-left:18px;
+
+}
+
+.action-content h2{
+
+  font-family:'Anton',sans-serif;
+
+  font-size:48px;
+
+  line-height:0.95;
+
+  letter-spacing:1px;
+
+  margin-bottom:10px;
+
+}
+
+.action-content p{
+
+  font-size:22px;
+
+  color:rgba(255,255,255,0.9);
+
+}
+
+/* =====================================
+   ARROW
+===================================== */
+
+.arrow{
+
+  font-size:34px;
+
+  margin-left:14px;
+
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width:430px){
+
+  .action-box{
+
+    min-height:105px;
+
+    padding:14px;
+
+  }
+
+  .action-icon{
+
+    width:62px;
+    height:62px;
+
+    font-size:26px;
+
+  }
+
+  .action-content{
+
+    padding-left:14px;
+
+  }
+
+  .action-content h2{
+
+    font-size:34px;
+
+  }
+
+  .action-content p{
+
+    font-size:16px;
+
+  }
+
+  .arrow{
+
+    font-size:26px;
+
+  }
+
+}
   </style>
 
 </head>
@@ -808,7 +993,97 @@ EDITORIAL PREMIUM DASHBOARD
     </section>
 
   </div>
+<!-- =========================================
+ADD THIS BELOW SLIDER SECTION
+========================================= -->
 
+<section class="action-section">
+
+  <!-- DONATE -->
+
+  <div class="action-box donate-box">
+
+    <div class="action-icon">
+
+      <i class="fa-regular fa-heart"></i>
+
+    </div>
+
+    <div class="action-content">
+
+      <h2>DONATE</h2>
+
+      <p>
+        Support the movement.
+      </p>
+
+    </div>
+
+    <div class="arrow">
+
+      <i class="fa-solid fa-arrow-right"></i>
+
+    </div>
+
+  </div>
+
+  <!-- REFER -->
+
+  <div class="action-box refer-box">
+
+    <div class="action-icon">
+
+      <i class="fa-solid fa-user-plus"></i>
+
+    </div>
+
+    <div class="action-content">
+
+      <h2>REFER</h2>
+
+      <p>
+        Invite your friends.
+      </p>
+
+    </div>
+
+    <div class="arrow">
+
+      <i class="fa-solid fa-arrow-right"></i>
+
+    </div>
+
+  </div>
+
+  <!-- SUGGEST -->
+
+  <div class="action-box suggest-box">
+
+    <div class="action-icon">
+
+      <i class="fa-regular fa-lightbulb"></i>
+
+    </div>
+
+    <div class="action-content">
+
+      <h2>SUGGEST</h2>
+
+      <p>
+        Share your ideas.
+      </p>
+
+    </div>
+
+    <div class="arrow">
+
+      <i class="fa-solid fa-arrow-right"></i>
+
+    </div>
+
+  </div>
+
+</section>
   <!-- =====================================
        FIREBASE
   ====================================== -->
