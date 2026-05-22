@@ -1,0 +1,1257 @@
+<!-- =========================================================
+REBUILD INDIA - profile.html
+FINAL EDITABLE PROFILE
+========================================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Rebuild India Profile</title>
+
+  <!-- GOOGLE FONTS -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html,
+    body{
+
+      width:100%;
+
+      overflow-y:auto;
+      overflow-x:hidden;
+
+      font-family:'Inter',sans-serif;
+
+      background:#F3EBDD;
+
+      color:#1A120D;
+
+    }
+
+    body{
+
+      display:flex;
+      justify-content:center;
+
+      padding:10px;
+
+    }
+
+    /* ====================================
+       MAIN CARD
+    ==================================== */
+
+    .card{
+
+      width:100%;
+      max-width:430px;
+
+      background:#1A120D;
+
+      border:3px solid #111;
+
+      overflow:hidden;
+
+      box-shadow:
+      8px 8px 0px rgba(0,0,0,0.12);
+
+    }
+
+    /* ====================================
+       TOPBAR
+    ==================================== */
+
+    .topbar{
+
+      width:100%;
+
+      background:#F3EBDD;
+
+      border-bottom:3px solid #111;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      padding:14px;
+
+    }
+
+    .brand{
+
+      display:flex;
+      align-items:center;
+
+      gap:10px;
+
+    }
+
+    .logo{
+
+      width:52px;
+      height:52px;
+
+      border-radius:50%;
+
+      border:3px solid #111;
+
+      background:
+      linear-gradient(
+      to bottom,
+
+      #D96B1D 0%,
+      #D96B1D 33%,
+
+      white 33%,
+      white 66%,
+
+      #1F5C3F 66%,
+      #1F5C3F 100%
+      );
+
+      position:relative;
+
+    }
+
+    .logo::after{
+
+      content:"";
+
+      position:absolute;
+
+      width:16px;
+      height:16px;
+
+      border:3px solid #0B2D6D;
+
+      border-radius:50%;
+
+      top:50%;
+      left:50%;
+
+      transform:translate(-50%,-50%);
+
+    }
+
+    .brand h1{
+
+      font-family:'Anton',sans-serif;
+
+      font-size:28px;
+
+      line-height:0.95;
+
+      color:#111;
+
+      letter-spacing:1px;
+
+    }
+
+    .member-box{
+
+      text-align:right;
+
+    }
+
+    .member-box p{
+
+      color:#D96B1D;
+
+      font-size:11px;
+
+      font-weight:800;
+
+      letter-spacing:3px;
+
+      margin-bottom:5px;
+
+    }
+
+    .member-box h2{
+
+      font-family:'Anton',sans-serif;
+
+      font-size:34px;
+
+      line-height:1;
+
+      color:#111;
+
+      letter-spacing:1px;
+
+    }
+
+    /* ====================================
+       FLAG
+    ==================================== */
+
+    .flag{
+
+      width:100%;
+      height:180px;
+
+      background:
+      linear-gradient(
+      to bottom,
+
+      #D96B1D 0%,
+      #D96B1D 33%,
+
+      #F3EBDD 33%,
+      #F3EBDD 66%,
+
+      #1F5C3F 66%,
+      #1F5C3F 100%
+      );
+
+      position:relative;
+
+    }
+
+    /* ====================================
+       PROFILE IMAGE
+    ==================================== */
+
+    .profile-wrapper{
+
+      position:absolute;
+
+      top:170px;
+      left:50%;
+
+      transform:translateX(-50%);
+
+      z-index:10;
+
+    }
+
+    .profile-image{
+
+      width:135px;
+      height:135px;
+
+      border-radius:50%;
+
+      object-fit:cover;
+
+      border:6px solid #F3EBDD;
+
+      background:white;
+
+    }
+
+    /* ====================================
+       HIDDEN FILE
+    ==================================== */
+
+    #fileInput{
+      display:none;
+    }
+
+    /* ====================================
+       CONTENT
+    ==================================== */
+
+    .content{
+
+      padding:90px 18px 24px;
+
+      color:#F3EBDD;
+
+    }
+
+    .name{
+
+      text-align:center;
+
+      font-family:'Anton',sans-serif;
+
+      font-size:48px;
+
+      line-height:1;
+
+      letter-spacing:1px;
+
+      text-transform:uppercase;
+
+      word-break:break-word;
+
+      padding:0 8px;
+
+      margin-top:0;
+
+    }
+
+    .role{
+
+      text-align:center;
+
+      margin-top:12px;
+
+      color:#D96B1D;
+
+      font-size:18px;
+
+      font-weight:800;
+
+      letter-spacing:2px;
+
+      text-transform:uppercase;
+
+    }
+
+    .divider{
+
+      width:100%;
+
+      height:1px;
+
+      background:#ffffff20;
+
+      margin:20px 0;
+
+    }
+
+    .quote{
+
+      text-align:center;
+
+      color:#D7CABA;
+
+      font-size:13px;
+
+      letter-spacing:4px;
+
+      line-height:1.6;
+
+      margin-bottom:20px;
+
+    }
+
+    /* ====================================
+       GRID
+    ==================================== */
+
+    .grid{
+
+      border:1px solid #ffffff15;
+
+    }
+
+    .row{
+
+      display:grid;
+
+      grid-template-columns:1fr 1fr;
+
+      border-bottom:1px solid #ffffff15;
+
+    }
+
+    .row:last-child{
+      border-bottom:none;
+    }
+
+    .box{
+
+      min-width:0;
+
+      min-height:95px;
+
+      padding:14px;
+
+      border-right:1px solid #ffffff15;
+
+      display:flex;
+      align-items:center;
+
+      gap:12px;
+
+    }
+
+    .box:last-child{
+      border-right:none;
+    }
+
+    .icon{
+
+      width:58px;
+      height:58px;
+
+      border:2px solid #D96B1D;
+
+      color:#D96B1D;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      font-size:22px;
+
+      flex-shrink:0;
+
+    }
+
+    .info{
+
+      min-width:0;
+
+      width:100%;
+
+    }
+
+    .info small{
+
+      display:block;
+
+      color:#D96B1D;
+
+      font-size:11px;
+
+      font-weight:800;
+
+      letter-spacing:3px;
+
+      margin-bottom:7px;
+
+    }
+
+    .info h3{
+
+      font-size:16px;
+
+      line-height:1.35;
+
+      font-weight:500;
+
+      white-space:nowrap;
+
+      overflow:hidden;
+
+      text-overflow:ellipsis;
+
+    }
+
+    /* ====================================
+       ABOUT
+    ==================================== */
+
+    .about{
+
+      display:flex;
+
+      align-items:flex-start;
+
+      gap:12px;
+
+      padding:14px;
+
+    }
+
+    .about h3{
+
+      white-space:normal !important;
+
+      overflow:visible !important;
+
+      text-overflow:unset !important;
+
+    }
+
+    /* ====================================
+       BUTTONS
+    ==================================== */
+
+    .buttons{
+
+      width:100%;
+
+      display:grid;
+
+      grid-template-columns:1fr 1fr;
+
+      margin-top:18px;
+
+    }
+
+    .btn{
+
+      height:68px;
+
+      border:none;
+
+      font-family:'Anton',sans-serif;
+
+      font-size:22px;
+
+      letter-spacing:1px;
+
+      color:white;
+
+      cursor:pointer;
+
+    }
+
+    .edit{
+
+      background:#1F5C3F;
+    }
+
+    .save{
+
+      background:#D96B1D;
+    }
+
+    /* ====================================
+       EDIT MODAL
+    ==================================== */
+
+    .modal{
+
+      position:fixed;
+
+      inset:0;
+
+      background:rgba(0,0,0,0.7);
+
+      display:none;
+
+      justify-content:center;
+      align-items:center;
+
+      padding:20px;
+
+      z-index:999;
+
+    }
+
+    .modal-content{
+
+      width:100%;
+      max-width:420px;
+
+      background:#F3EBDD;
+
+      padding:22px;
+
+      border:3px solid #111;
+
+    }
+
+    .modal-content h2{
+
+      font-family:'Anton',sans-serif;
+
+      font-size:34px;
+
+      margin-bottom:20px;
+
+      color:#111;
+
+    }
+
+    .input-box{
+      margin-bottom:16px;
+    }
+
+    .input-box label{
+
+      display:block;
+
+      margin-bottom:8px;
+
+      font-size:13px;
+
+      font-weight:800;
+
+      letter-spacing:2px;
+
+      color:#D96B1D;
+
+    }
+
+    .input-box input,
+    .input-box textarea{
+
+      width:100%;
+
+      padding:14px;
+
+      border:2px solid #111;
+
+      background:white;
+
+      font-size:15px;
+
+      outline:none;
+
+    }
+
+    .input-box textarea{
+
+      min-height:100px;
+
+      resize:none;
+
+    }
+
+    .modal-buttons{
+
+      display:grid;
+
+      grid-template-columns:1fr 1fr;
+
+      gap:10px;
+
+      margin-top:18px;
+
+    }
+
+    .modal-buttons button{
+
+      height:58px;
+
+      border:none;
+
+      font-family:'Anton',sans-serif;
+
+      font-size:20px;
+
+      color:white;
+
+    }
+
+    .cancel{
+      background:#222;
+    }
+
+    .save2{
+      background:#D96B1D;
+    }
+
+    /* ====================================
+       MOBILE
+    ==================================== */
+
+    @media(max-width:420px){
+
+      .brand h1{
+        font-size:23px;
+      }
+
+      .member-box h2{
+        font-size:28px;
+      }
+
+      .name{
+        font-size:40px;
+      }
+
+      .info h3{
+        font-size:14px;
+      }
+
+      .btn{
+        font-size:18px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- CARD -->
+
+  <div class="card">
+
+    <!-- TOPBAR -->
+
+    <div class="topbar">
+
+      <div class="brand">
+
+        <div class="logo"></div>
+
+        <h1>
+          REBUILD<br>
+          INDIA
+        </h1>
+
+      </div>
+
+      <div class="member-box">
+
+        <p>MEMBER ID</p>
+
+        <h2 id="memberId">
+          RI-000001
+        </h2>
+
+      </div>
+
+    </div>
+
+    <!-- FLAG -->
+
+    <div class="flag"></div>
+
+    <!-- PROFILE -->
+
+    <div class="profile-wrapper">
+
+      <img
+      id="profileImage"
+      class="profile-image">
+
+    </div>
+
+    <!-- CONTENT -->
+
+    <div class="content">
+
+      <h1
+      class="name"
+      id="profileName">
+
+        LOADING
+
+      </h1>
+
+      <div
+      class="role"
+      id="profileRole">
+
+        MEMBER
+
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="quote">
+        TOGETHER • RESILIENT • UNSTOPPABLE
+      </div>
+
+      <!-- GRID -->
+
+      <div class="grid">
+
+        <!-- ROW -->
+
+        <div class="row">
+
+          <div class="box">
+
+            <div class="icon">
+              <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="info">
+
+              <small>FULL NAME</small>
+
+              <h3 id="fullName">
+                Loading...
+              </h3>
+
+            </div>
+
+          </div>
+
+          <div class="box">
+
+            <div class="icon">
+              <i class="fa-solid fa-calendar"></i>
+            </div>
+
+            <div class="info">
+
+              <small>AGE</small>
+
+              <h3 id="age">
+                --
+              </h3>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ROW -->
+
+        <div class="row">
+
+          <div class="box">
+
+            <div class="icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+
+            <div class="info">
+
+              <small>DISTRICT</small>
+
+              <h3 id="district">
+                --
+              </h3>
+
+            </div>
+
+          </div>
+
+          <div class="box">
+
+            <div class="icon">
+              <i class="fa-solid fa-building-columns"></i>
+            </div>
+
+            <div class="info">
+
+              <small>CONSTITUENCY</small>
+
+              <h3 id="constituency">
+                --
+              </h3>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ROW -->
+
+        <div class="row">
+
+          <div class="box">
+
+            <div class="icon">
+              <i class="fa-solid fa-shield"></i>
+            </div>
+
+            <div class="info">
+
+              <small>ROLE</small>
+
+              <h3 id="role2">
+                MEMBER
+              </h3>
+
+            </div>
+
+          </div>
+
+          <div class="box">
+
+            <div class="icon">
+              <i class="fa-solid fa-calendar-days"></i>
+            </div>
+
+            <div class="info">
+
+              <small>JOINED ON</small>
+
+              <h3 id="joinedDate">
+                --
+              </h3>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ABOUT -->
+
+        <div class="about">
+
+          <div class="icon">
+            <i class="fa-solid fa-quote-left"></i>
+          </div>
+
+          <div class="info">
+
+            <small>ABOUT ME</small>
+
+            <h3 id="bio">
+              I believe in transparency and rebuilding India.
+            </h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- BUTTONS -->
+
+      <div class="buttons">
+
+        <button class="btn edit" id="editBtn">
+          EDIT PROFILE
+        </button>
+
+        <button class="btn save" id="saveBtn">
+          SAVE CHANGES
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FILE INPUT -->
+
+  <input
+  type="file"
+  id="fileInput"
+  accept="image/*">
+
+  <!-- MODAL -->
+
+  <div class="modal" id="modal">
+
+    <div class="modal-content">
+
+      <h2>
+        EDIT PROFILE
+      </h2>
+
+      <div class="input-box">
+
+        <label>FULL NAME</label>
+
+        <input type="text" id="nameInput">
+
+      </div>
+
+      <div class="input-box">
+
+        <label>AGE</label>
+
+        <input type="number" id="ageInput">
+
+      </div>
+
+      <div class="input-box">
+
+        <label>DISTRICT</label>
+
+        <input type="text" id="districtInput">
+
+      </div>
+
+      <div class="input-box">
+
+        <label>CONSTITUENCY</label>
+
+        <input type="text" id="constituencyInput">
+
+      </div>
+
+      <div class="input-box">
+
+        <label>ABOUT YOU</label>
+
+        <textarea id="bioInput"></textarea>
+
+      </div>
+
+      <div class="modal-buttons">
+
+        <button class="cancel" id="cancelBtn">
+          CANCEL
+        </button>
+
+        <button class="save2" id="saveProfileBtn">
+          SAVE
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FIREBASE -->
+
+  <script type="module">
+
+    import { initializeApp }
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+    import {
+      getFirestore,
+      doc,
+      getDoc,
+      updateDoc
+    }
+
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    // FIREBASE CONFIG
+
+    const firebaseConfig = {
+
+      apiKey: "AIzaSyC3bNRxf8kJDKkucTLVKktba_ulpphKc8o",
+
+      authDomain: "rebuildbharath-658a9.firebaseapp.com",
+
+      projectId: "rebuildbharath-658a9",
+
+      storageBucket: "rebuildbharath-658a9.firebasestorage.app",
+
+      messagingSenderId: "307480289915",
+
+      appId: "1:307480289915:web:31253b04dbd0498d6d78de",
+
+      measurementId: "G-DFC55C8M5N"
+
+    };
+
+    // INIT
+
+    const app =
+    initializeApp(firebaseConfig);
+
+    const db =
+    getFirestore(app);
+
+    // EMAIL
+
+    const email =
+    localStorage.getItem("userEmail");
+
+    let currentPhoto = "";
+
+    // LOAD USER
+
+    async function loadUser(){
+
+      const docRef =
+      doc(db,"members",email);
+
+      const docSnap =
+      await getDoc(docRef);
+
+      if(docSnap.exists()){
+
+        const data =
+        docSnap.data();
+
+        currentPhoto =
+        data.photo || "";
+
+        // UI
+
+        document.getElementById("profileImage")
+        .src =
+        currentPhoto;
+
+        document.getElementById("profileName")
+        .innerText =
+        data.name || "MEMBER";
+
+        document.getElementById("profileRole")
+        .innerText =
+        data.role || "MEMBER";
+
+        document.getElementById("memberId")
+        .innerText =
+        data.memberId || "--";
+
+        document.getElementById("fullName")
+        .innerText =
+        data.name || "--";
+
+        document.getElementById("age")
+        .innerText =
+        data.age || "--";
+
+        document.getElementById("district")
+        .innerText =
+        data.district || "--";
+
+        document.getElementById("constituency")
+        .innerText =
+        data.constituency || "--";
+
+        document.getElementById("role2")
+        .innerText =
+        data.role || "MEMBER";
+
+        document.getElementById("bio")
+        .innerText =
+        data.bio ||
+        "I believe in transparency and rebuilding India.";
+
+        // DATE
+
+        if(data.joinedAt){
+
+          const joined =
+          new Date(data.joinedAt.seconds * 1000);
+
+          document.getElementById("joinedDate")
+          .innerText =
+          joined.toLocaleDateString();
+
+        }
+
+        // INPUTS
+
+        document.getElementById("nameInput")
+        .value =
+        data.name || "";
+
+        document.getElementById("ageInput")
+        .value =
+        data.age || "";
+
+        document.getElementById("districtInput")
+        .value =
+        data.district || "";
+
+        document.getElementById("constituencyInput")
+        .value =
+        data.constituency || "";
+
+        document.getElementById("bioInput")
+        .value =
+        data.bio || "";
+
+      }
+
+    }
+
+    loadUser();
+
+    // MODAL
+
+    const modal =
+    document.getElementById("modal");
+
+    document.getElementById("editBtn")
+    .onclick = ()=>{
+
+      modal.style.display = "flex";
+
+    };
+
+    document.getElementById("cancelBtn")
+    .onclick = ()=>{
+
+      modal.style.display = "none";
+
+    };
+
+    // IMAGE CHANGE
+
+    document.getElementById("profileImage")
+    .onclick = ()=>{
+
+      document.getElementById("fileInput")
+      .click();
+
+    };
+
+    document.getElementById("fileInput")
+    .addEventListener("change",(e)=>{
+
+      const file =
+      e.target.files[0];
+
+      const reader =
+      new FileReader();
+
+      reader.onload = ()=>{
+
+        currentPhoto =
+        reader.result;
+
+        document.getElementById("profileImage")
+        .src =
+        currentPhoto;
+
+      };
+
+      reader.readAsDataURL(file);
+
+    });
+
+    // SAVE PROFILE
+
+    async function saveProfile(){
+
+      const docRef =
+      doc(db,"members",email);
+
+      await updateDoc(docRef,{
+
+        name:
+        document.getElementById("nameInput").value,
+
+        age:
+        document.getElementById("ageInput").value,
+
+        district:
+        document.getElementById("districtInput").value,
+
+        constituency:
+        document.getElementById("constituencyInput").value,
+
+        bio:
+        document.getElementById("bioInput").value,
+
+        photo:
+        currentPhoto
+
+      });
+
+      modal.style.display = "none";
+
+      loadUser();
+
+      alert("Profile Updated");
+
+    }
+
+    document.getElementById("saveProfileBtn")
+    .onclick =
+    saveProfile;
+
+    document.getElementById("saveBtn")
+    .onclick =
+    saveProfile;
+
+  </script>
+
+</body>
+</html>
