@@ -528,12 +528,13 @@ EDITORIAL PREMIUM DASHBOARD
 
   width:100%;
 
-  padding:34px 18px 0;
+  padding:28px 18px 0;
 
-  display:flex;
-  flex-direction:column;
+  display:grid;
 
-  gap:16px;
+  grid-template-columns:1fr 1fr 1fr;
+
+  gap:10px;
 
 }
 
@@ -545,15 +546,18 @@ EDITORIAL PREMIUM DASHBOARD
 
   width:100%;
 
-  min-height:120px;
+  height:110px;
 
   border:2px solid #111;
 
   display:flex;
-  align-items:center;
-  justify-content:space-between;
 
-  padding:18px;
+  flex-direction:column;
+
+  justify-content:center;
+  align-items:flex-start;
+
+  padding:12px;
 
   position:relative;
 
@@ -597,8 +601,8 @@ EDITORIAL PREMIUM DASHBOARD
 
 .action-icon{
 
-  width:78px;
-  height:78px;
+  width:42px;
+  height:42px;
 
   border:2px solid rgba(255,255,255,0.85);
 
@@ -606,9 +610,9 @@ EDITORIAL PREMIUM DASHBOARD
   justify-content:center;
   align-items:center;
 
-  font-size:34px;
+  font-size:18px;
 
-  flex-shrink:0;
+  margin-bottom:10px;
 
 }
 
@@ -628,19 +632,21 @@ EDITORIAL PREMIUM DASHBOARD
 
   font-family:'Anton',sans-serif;
 
-  font-size:48px;
+  font-size:24px;
 
-  line-height:0.95;
+  line-height:1;
 
   letter-spacing:1px;
 
-  margin-bottom:10px;
+  margin-bottom:4px;
 
 }
 
 .action-content p{
 
-  font-size:22px;
+  font-size:11px;
+
+  line-height:1.4;
 
   color:rgba(255,255,255,0.9);
 
@@ -657,7 +663,9 @@ EDITORIAL PREMIUM DASHBOARD
   margin-left:14px;
 
 }
-
+.arrow{
+  display:none;
+}
 /* =====================================
    MOBILE
 ===================================== */
