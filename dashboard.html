@@ -770,9 +770,9 @@ CONNECTED TO FIREBASE LIVE
 
       <i class="fa-regular fa-bell"></i>
 
-      <div class="bell-count">
-        5
-      </div>
+<div class="bell-count" id="notificationCount">
+  0
+</div>
 
     </div>
 
@@ -847,7 +847,7 @@ CONNECTED TO FIREBASE LIVE
 
       <h3>REPORTS</h3>
 
-      <h2>5,281</h2>
+<h2 id="reportCount">0</h2>
 
       <p>+532 THIS WEEK</p>
 
@@ -859,7 +859,7 @@ CONNECTED TO FIREBASE LIVE
 
       <h3>CAMPAIGNS</h3>
 
-      <h2>12</h2>
+      <h2 id="campaignCount">0</h2>
 
       <p>+2 THIS WEEK</p>
 
@@ -884,54 +884,7 @@ CONNECTED TO FIREBASE LIVE
     </div>
 
     <div class="feed-item">
-
-      <div class="feed-icon green">
-        <i class="fa-solid fa-users"></i>
-      </div>
-
-      <div class="feed-text">
-        Bangalore Clean Governance Campaign launched successfully!
-      </div>
-
-      <div class="feed-time">
-        2h ago
-      </div>
-
-    </div>
-
-    <div class="feed-item">
-
-      <div class="feed-icon yellow">
-        <i class="fa-solid fa-user-plus"></i>
-      </div>
-
-      <div class="feed-text">
-        124 new builders joined Rebuild India
-      </div>
-
-      <div class="feed-time">
-        3h ago
-      </div>
-
-    </div>
-
-    <div class="feed-item">
-
-      <div class="feed-icon purple">
-        <i class="fa-solid fa-trophy"></i>
-      </div>
-
-      <div class="feed-text">
-        Congratulations to top district volunteers this week!
-      </div>
-
-      <div class="feed-time">
-        1d ago
-      </div>
-
-    </div>
-
-  </div>
+<div id="feedContainer"></div>
 
   <!-- REFERRAL -->
 
@@ -1163,16 +1116,15 @@ CONNECTED TO FIREBASE LIVE
 
     import { initializeApp }
     from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
-    import {
-      getFirestore,
-      collection,
-      getDocs,
-      doc,
-      getDoc
-    }
-
-    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import {
+  getFirestore,
+  collection,
+  doc,
+  getDoc,
+  onSnapshot,
+  query
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
     // FIREBASE CONFIG
 
@@ -1246,22 +1198,105 @@ CONNECTED TO FIREBASE LIVE
     }
 
     loadUser();
+// =====================================
+// LIVE MEMBER COUNT
+// =====================================
 
-    // LIVE MEMBER COUNT
+const membersRef =
+collection(db,"members");
 
-    async function loadStats(){
+onSnapshot(membersRef,(snapshot)=>{
 
-      const querySnapshot =
-      await getDocs(collection(db, "members"));
+  document.getElementById("memberCount")
+  .innerText =
+  snapshot.size.toLocaleString();
 
-      document.getElementById("memberCount")
-      .innerText =
-      querySnapshot.size.toLocaleString();
-
-    }
+});
 
     loadStats();
+// =====================================
+// LIVE REPORT COUNT
+// =====================================
 
+const reportsRef =
+collection(db,"reports");
+
+onSnapshot(reportsRef,(snapshot)=>{
+
+  document.getElementById("reportCount")
+  .innerText =
+  snapshot.size.toLocaleString();
+
+});
+    // =====================================
+// LIVE CAMPAIGN COUNT
+// =====================================
+
+const campaignRef =
+collection(db,"campaigns");
+
+onSnapshot(campaignRef,(snapshot)=>{
+
+  document.getElementById("campaignCount")
+  .innerText =
+  snapshot.size.toLocaleString();
+
+});
+    // =====================================
+// LIVE NOTIFICATIONS
+// =====================================
+
+const notificationRef =
+collection(db,"notifications");
+
+onSnapshot(notificationRef,(snapshot)=>{
+
+  document.getElementById("notificationCount")
+  .innerText =
+  snapshot.size;
+
+});
+    // =====================================
+// LIVE MOVEMENT FEED
+// =====================================
+
+const feedContainer =
+document.getElementById("feedContainer");
+
+const feedRef =
+collection(db,"movement_feed");
+
+onSnapshot(feedRef,(snapshot)=>{
+
+  feedContainer.innerHTML = "";
+
+  snapshot.forEach((doc)=>{
+
+    const data = doc.data();
+
+    feedContainer.innerHTML += `
+
+    <div class="feed-item">
+
+      <div class="feed-icon green">
+        <i class="fa-solid fa-bolt"></i>
+      </div>
+
+      <div class="feed-text">
+        ${data.text}
+      </div>
+
+      <div class="feed-time">
+        ${data.time}
+      </div>
+
+    </div>
+
+    `;
+
+  });
+
+});
   </script>
 
 </body>
