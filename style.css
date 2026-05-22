@@ -402,3 +402,237 @@ img{
   }
 
 }.
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+
+  width:100%;
+
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  z-index:9999;
+
+  padding:28px 0;
+
+  transition:0.4s;
+
+}
+
+.navbar.scrolled{
+
+  background:rgba(239,231,216,0.94);
+
+  backdrop-filter:blur(12px);
+
+  border-bottom:1px solid var(--border);
+
+}
+
+.nav-container{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:16px;
+
+}
+
+.logo-mark{
+
+  width:52px;
+  height:52px;
+
+  background:var(--dark);
+
+  color:var(--white);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-family:'Bebas Neue', sans-serif;
+
+  font-size:28px;
+
+  letter-spacing:1px;
+
+}
+
+.logo-text h2{
+
+  font-family:'Bebas Neue', sans-serif;
+
+  font-size:32px;
+
+  letter-spacing:1px;
+
+  color:var(--dark);
+
+  line-height:1;
+
+}
+
+.logo-text p{
+
+  font-size:11px;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+
+  color:rgba(18,11,8,0.65);
+
+  margin-top:4px;
+
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.nav-links{
+
+  display:flex;
+
+  gap:40px;
+
+}
+
+.nav-links a{
+
+  text-decoration:none;
+
+  color:var(--dark);
+
+  font-size:13px;
+
+  font-weight:700;
+
+  text-transform:uppercase;
+
+  letter-spacing:1px;
+
+  position:relative;
+
+}
+
+.nav-links a::after{
+
+  content:'';
+
+  position:absolute;
+
+  left:0;
+  bottom:-8px;
+
+  width:0%;
+  height:2px;
+
+  background:var(--accent);
+
+  transition:0.35s;
+
+}
+
+.nav-links a:hover::after{
+
+  width:100%;
+
+}
+
+/* =========================
+   NAV BUTTON
+========================= */
+
+.nav-btn{
+
+  padding:16px 28px !important;
+
+}
+
+/* =========================
+   MOBILE BUTTON
+========================= */
+
+.menu-btn{
+
+  display:none;
+
+  font-size:30px;
+
+  cursor:pointer;
+
+  color:var(--dark);
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:950px){
+
+  .nav-links{
+
+    display:none;
+
+  }
+
+  .nav-btn{
+
+    display:none;
+
+  }
+
+  .menu-btn{
+
+    display:block;
+
+  }
+
+}
+
+@media(max-width:700px){
+
+  .navbar{
+
+    padding:20px 0;
+
+  }
+
+  .logo-mark{
+
+    width:44px;
+    height:44px;
+
+    font-size:24px;
+
+  }
+
+  .logo-text h2{
+
+    font-size:24px;
+
+  }
+
+}
