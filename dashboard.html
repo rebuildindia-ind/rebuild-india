@@ -1,0 +1,900 @@
+<!-- =========================================
+REBUILD INDIA - dashboard.html
+STEP 1 FINAL
+EDITORIAL PREMIUM DASHBOARD
+========================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8"/>
+
+  <meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"/>
+
+  <title>Rebuild India</title>
+
+  <!-- FONTS -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- COCKROACH STYLE TYPOGRAPHY -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- ICONS -->
+
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+
+      background:#F4EBDD;
+
+      color:#111;
+
+      font-family:'Inter',sans-serif;
+
+      overflow-x:hidden;
+
+    }
+
+    /* =====================================
+       MAIN
+    ===================================== */
+
+    .dashboard{
+
+      width:100%;
+
+      min-height:100vh;
+
+      padding-bottom:50px;
+
+    }
+
+    /* =====================================
+       TOPBAR
+    ===================================== */
+
+    .topbar{
+
+      width:100%;
+
+      height:86px;
+
+      border-bottom:2px solid #111;
+
+      background:#F4EBDD;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      padding:0 18px;
+
+      position:sticky;
+
+      top:0;
+
+      z-index:999;
+
+    }
+
+    /* LEFT */
+
+    .left{
+
+      display:flex;
+      align-items:center;
+
+      gap:14px;
+
+    }
+
+    /* MENU */
+
+    .menu{
+
+      width:34px;
+
+      display:flex;
+      flex-direction:column;
+
+      gap:6px;
+
+    }
+
+    .menu span{
+
+      width:100%;
+      height:3px;
+
+      background:#111;
+
+    }
+
+    /* BRAND */
+
+    .brand{
+
+      font-family:'Anton',sans-serif;
+
+      font-size:30px;
+
+      line-height:0.88;
+
+      letter-spacing:1px;
+
+      text-transform:uppercase;
+
+    }
+
+    /* RIGHT */
+
+    .right{
+
+      display:flex;
+      align-items:center;
+
+      gap:14px;
+
+    }
+
+    /* INDIA COLORS */
+
+    .india-dot{
+
+      width:18px;
+      height:18px;
+
+      border-radius:50%;
+
+      border:1px solid #111;
+    }
+
+    .orange{
+      background:#D96B1D;
+    }
+
+    .white{
+      background:#fff;
+    }
+
+    .green{
+      background:#1F5C3F;
+    }
+
+    /* =====================================
+       STRIP
+    ===================================== */
+
+    .strip{
+
+      width:100%;
+
+      height:42px;
+
+      border-bottom:2px solid #111;
+
+      display:flex;
+      align-items:center;
+
+      overflow:hidden;
+
+      white-space:nowrap;
+
+      background:#1A120D;
+
+    }
+
+    .strip-text{
+
+      display:flex;
+
+      gap:70px;
+
+      color:#F4EBDD;
+
+      font-size:13px;
+
+      letter-spacing:4px;
+
+      text-transform:uppercase;
+
+      animation:move 20s linear infinite;
+
+      padding-left:100%;
+
+    }
+
+    @keyframes move{
+
+      from{
+        transform:translateX(0);
+      }
+
+      to{
+        transform:translateX(-100%);
+      }
+
+    }
+
+    /* =====================================
+       HERO
+    ===================================== */
+
+    .hero{
+
+      width:100%;
+
+      padding:26px 18px 0;
+
+    }
+
+    .welcome{
+
+      font-size:15px;
+
+      color:#7d7063;
+
+      letter-spacing:1px;
+
+      margin-bottom:14px;
+
+      font-weight:600;
+
+    }
+
+    .hero-title{
+
+      font-family:'Anton',sans-serif;
+
+      font-size:72px;
+
+      line-height:0.92;
+
+      text-transform:uppercase;
+
+      letter-spacing:1px;
+
+      color:#111;
+
+      margin-bottom:20px;
+
+    }
+
+    .hero-title span{
+
+      color:#D96B1D;
+
+    }
+
+    .hero-sub{
+
+      font-size:24px;
+
+      line-height:1.5;
+
+      color:#3d3128;
+
+      max-width:700px;
+
+    }
+
+    /* =====================================
+       SLIDER
+    ===================================== */
+
+    .slider-section{
+
+      width:100%;
+
+      margin-top:36px;
+
+      overflow:hidden;
+
+    }
+
+    .slider{
+
+      display:flex;
+
+      width:500%;
+
+      animation:slide 20s infinite;
+
+    }
+
+    @keyframes slide{
+
+      0%{
+        transform:translateX(0%);
+      }
+
+      18%{
+        transform:translateX(0%);
+      }
+
+      20%{
+        transform:translateX(-20%);
+      }
+
+      38%{
+        transform:translateX(-20%);
+      }
+
+      40%{
+        transform:translateX(-40%);
+      }
+
+      58%{
+        transform:translateX(-40%);
+      }
+
+      60%{
+        transform:translateX(-60%);
+      }
+
+      78%{
+        transform:translateX(-60%);
+      }
+
+      80%{
+        transform:translateX(-80%);
+      }
+
+      98%{
+        transform:translateX(-80%);
+      }
+
+      100%{
+        transform:translateX(0%);
+      }
+
+    }
+
+    /* =====================================
+       SLIDE
+    ===================================== */
+
+    .slide{
+
+      width:100vw;
+
+      flex-shrink:0;
+
+      padding:0 18px;
+
+    }
+
+    .slide-card{
+
+      width:100%;
+
+      height:460px;
+
+      border:2px solid #111;
+
+      position:relative;
+
+      overflow:hidden;
+
+      background:#1A120D;
+
+    }
+
+    /* IMAGE */
+
+    .slide-image{
+
+      width:100%;
+      height:100%;
+
+      object-fit:cover;
+
+      filter:brightness(0.62);
+
+    }
+
+    /* OVERLAY */
+
+    .overlay{
+
+      position:absolute;
+
+      inset:0;
+
+      background:
+      linear-gradient(
+      to top,
+      rgba(0,0,0,0.88),
+      rgba(0,0,0,0.2)
+      );
+
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+
+      padding:24px;
+
+      color:white;
+
+    }
+
+    .mini{
+
+      color:#D96B1D;
+
+      font-size:13px;
+
+      letter-spacing:4px;
+
+      margin-bottom:12px;
+
+      text-transform:uppercase;
+
+      font-weight:700;
+
+    }
+
+    .overlay h2{
+
+      font-family:'Anton',sans-serif;
+
+      font-size:62px;
+
+      line-height:0.92;
+
+      text-transform:uppercase;
+
+      margin-bottom:16px;
+
+    }
+
+    .line{
+
+      width:60px;
+      height:4px;
+
+      background:#D96B1D;
+
+      margin-bottom:18px;
+
+    }
+
+    .overlay p{
+
+      font-size:22px;
+
+      line-height:1.5;
+
+      color:#ece1d5;
+
+      max-width:90%;
+
+    }
+
+    /* =====================================
+       MOBILE
+    ===================================== */
+
+    @media(max-width:430px){
+
+      .brand{
+        font-size:24px;
+      }
+
+      .hero-title{
+        font-size:52px;
+      }
+
+      .hero-sub{
+        font-size:18px;
+      }
+
+      .overlay h2{
+        font-size:42px;
+      }
+
+      .overlay p{
+        font-size:18px;
+      }
+
+      .slide-card{
+        height:400px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="dashboard">
+
+    <!-- =====================================
+         TOPBAR
+    ====================================== -->
+
+    <div class="topbar">
+
+      <!-- LEFT -->
+
+      <div class="left">
+
+        <!-- MENU -->
+
+        <div class="menu">
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </div>
+
+        <!-- BRAND -->
+
+        <div class="brand">
+
+          REBUILD<br>
+          INDIA
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+
+      <div class="right">
+
+        <div class="india-dot orange"></div>
+
+        <div class="india-dot white"></div>
+
+        <div class="india-dot green"></div>
+
+      </div>
+
+    </div>
+
+    <!-- =====================================
+         MOVEMENT STRIP
+    ====================================== -->
+
+    <div class="strip">
+
+      <div class="strip-text">
+
+        <span>STOP CORRUPTION</span>
+
+        <span>REBUILD INDIA</span>
+
+        <span>DIGITAL GOVERNANCE</span>
+
+        <span>YOUTH LEADERSHIP</span>
+
+        <span>EDUCATION REVOLUTION</span>
+
+        <span>TRANSPARENT SYSTEMS</span>
+
+      </div>
+
+    </div>
+
+    <!-- =====================================
+         HERO
+    ====================================== -->
+
+    <section class="hero">
+
+      <div
+      class="welcome"
+      id="welcomeText">
+
+        WELCOME MEMBER,
+
+      </div>
+
+      <div class="hero-title">
+
+        LET US<br>
+
+        <span>REBUILD INDIA.</span>
+
+      </div>
+
+      <div class="hero-sub">
+
+        What can we change if we stop corruption?
+
+      </div>
+
+    </section>
+
+    <!-- =====================================
+         NETFLIX AUTO SLIDER
+    ====================================== -->
+
+    <section class="slider-section">
+
+      <div class="slider">
+
+        <!-- SLIDE 1 -->
+
+        <div class="slide">
+
+          <div class="slide-card">
+
+            <!-- PUT YOUR IMAGE -->
+
+            <img
+            src=""
+            class="slide-image">
+
+            <div class="overlay">
+
+              <div class="mini">
+                MOVEMENT VISION
+              </div>
+
+              <h2>
+                END<br>
+                CORRUPTION
+              </h2>
+
+              <div class="line"></div>
+
+              <p>
+                Change text later.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- SLIDE 2 -->
+
+        <div class="slide">
+
+          <div class="slide-card">
+
+            <img
+            src=""
+            class="slide-image">
+
+            <div class="overlay">
+
+              <div class="mini">
+                EDUCATION
+              </div>
+
+              <h2>
+                FUTURE<br>
+                LEARNING
+              </h2>
+
+              <div class="line"></div>
+
+              <p>
+                Change text later.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- SLIDE 3 -->
+
+        <div class="slide">
+
+          <div class="slide-card">
+
+            <img
+            src=""
+            class="slide-image">
+
+            <div class="overlay">
+
+              <div class="mini">
+                DIGITAL INDIA
+              </div>
+
+              <h2>
+                DIGITAL<br>
+                GOVERNANCE
+              </h2>
+
+              <div class="line"></div>
+
+              <p>
+                Change text later.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- SLIDE 4 -->
+
+        <div class="slide">
+
+          <div class="slide-card">
+
+            <img
+            src=""
+            class="slide-image">
+
+            <div class="overlay">
+
+              <div class="mini">
+                YOUTH POWER
+              </div>
+
+              <h2>
+                YOUTH<br>
+                LEADERSHIP
+              </h2>
+
+              <div class="line"></div>
+
+              <p>
+                Change text later.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- SLIDE 5 -->
+
+        <div class="slide">
+
+          <div class="slide-card">
+
+            <img
+            src=""
+            class="slide-image">
+
+            <div class="overlay">
+
+              <div class="mini">
+                CLEAN INDIA
+              </div>
+
+              <h2>
+                CLEAN<br>
+                CITIES
+              </h2>
+
+              <div class="line"></div>
+
+              <p>
+                Change text later.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- =====================================
+       FIREBASE
+  ====================================== -->
+
+  <script type="module">
+
+    import { initializeApp }
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+    import {
+      getFirestore,
+      doc,
+      getDoc
+    }
+
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    // FIREBASE CONFIG
+
+    const firebaseConfig = {
+
+      apiKey: "AIzaSyC3bNRxf8kJDKkucTLVKktba_ulpphKc8o",
+
+      authDomain: "rebuildbharath-658a9.firebaseapp.com",
+
+      projectId: "rebuildbharath-658a9",
+
+      storageBucket: "rebuildbharath-658a9.firebasestorage.app",
+
+      messagingSenderId: "307480289915",
+
+      appId: "1:307480289915:web:31253b04dbd0498d6d78de",
+
+      measurementId: "G-DFC55C8M5N"
+
+    };
+
+    // INIT
+
+    const app =
+    initializeApp(firebaseConfig);
+
+    const db =
+    getFirestore(app);
+
+    // EMAIL
+
+    const email =
+    localStorage.getItem("userEmail");
+
+    // LOAD USER
+
+    async function loadUser(){
+
+      try{
+
+        const docRef =
+        doc(db,"members",email);
+
+        const docSnap =
+        await getDoc(docRef);
+
+        if(docSnap.exists()){
+
+          const data =
+          docSnap.data();
+
+          document.getElementById("welcomeText")
+          .innerText =
+          `WELCOME ${data.name?.toUpperCase() || "MEMBER"},`;
+
+        }
+
+      }
+
+      catch(error){
+
+        console.log(error);
+
+      }
+
+    }
+
+    loadUser();
+
+  </script>
+
+</body>
+</html>
