@@ -1,0 +1,404 @@
+/* =========================
+   GOOGLE FONTS
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* =========================
+   ROOT VARIABLES
+========================= */
+
+:root{
+
+  --bg:#EFE7D8;
+
+  --dark:#120B08;
+
+  --accent:#D96B1D;
+
+  --green:#1F5C3F;
+
+  --text:#2A211D;
+
+  --white:#ffffff;
+
+  --border:rgba(18,11,8,0.08);
+
+}
+
+/* =========================
+   RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  background:var(--bg);
+
+  color:var(--text);
+
+  font-family:'Inter', sans-serif;
+
+  overflow-x:hidden;
+
+}
+
+/* =========================
+   FILM GRAIN
+========================= */
+
+body::before{
+
+  content:'';
+
+  position:fixed;
+
+  inset:0;
+
+  background-image:url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+
+  opacity:0.04;
+
+  pointer-events:none;
+
+  z-index:99999;
+
+}
+
+/* =========================
+   GLOBAL CONTAINER
+========================= */
+
+.container{
+
+  width:100%;
+  padding:0 8%;
+
+}
+
+/* =========================
+   SECTION SPACING
+========================= */
+
+section{
+
+  width:100%;
+
+  position:relative;
+
+  padding:140px 0;
+
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+.hero-title,
+.section-title,
+.big-title{
+
+  font-family:'Bebas Neue', sans-serif;
+
+  letter-spacing:1px;
+
+  line-height:0.95;
+
+  text-transform:uppercase;
+
+}
+
+.hero-title{
+
+  font-size:140px;
+
+}
+
+.section-title{
+
+  font-size:88px;
+
+}
+
+.big-title{
+
+  font-size:120px;
+
+}
+
+/* =========================
+   PARAGRAPH
+========================= */
+
+.description{
+
+  font-size:20px;
+
+  line-height:1.9;
+
+  color:rgba(42,33,29,0.82);
+
+}
+
+/* =========================
+   MINI TITLE
+========================= */
+
+.mini-title{
+
+  color:var(--accent);
+
+  font-size:14px;
+
+  font-weight:700;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+
+  margin-bottom:24px;
+
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.primary-btn{
+
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:20px 38px;
+
+  background:var(--accent);
+
+  color:var(--white);
+
+  text-decoration:none;
+
+  text-transform:uppercase;
+
+  letter-spacing:1px;
+
+  font-size:14px;
+
+  font-weight:700;
+
+  transition:0.35s;
+
+  border:none;
+
+  cursor:pointer;
+
+}
+
+.primary-btn:hover{
+
+  background:var(--dark);
+
+  transform:translateY(-3px);
+
+}
+
+.secondary-btn{
+
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:20px 38px;
+
+  border:1px solid var(--dark);
+
+  color:var(--dark);
+
+  text-decoration:none;
+
+  text-transform:uppercase;
+
+  letter-spacing:1px;
+
+  font-size:14px;
+
+  font-weight:700;
+
+  transition:0.35s;
+
+}
+
+.secondary-btn:hover{
+
+  background:var(--dark);
+
+  color:var(--white);
+
+}
+
+/* =========================
+   IMAGE SYSTEM
+========================= */
+
+img{
+  width:100%;
+  display:block;
+}
+
+/* =========================
+   EDITORIAL GRID
+========================= */
+
+.grid-2{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:80px;
+
+  align-items:center;
+
+}
+
+/* =========================
+   DARK SECTION
+========================= */
+
+.dark-section{
+
+  background:var(--dark);
+
+  color:var(--white);
+
+}
+
+.dark-section .description{
+
+  color:rgba(255,255,255,0.72);
+
+}
+
+/* =========================
+   SECTION DIVIDER
+========================= */
+
+.section-divider{
+
+  width:100%;
+
+  height:1px;
+
+  background:rgba(18,11,8,0.08);
+
+}
+
+/* =========================
+   REVEAL ANIMATION
+========================= */
+
+.reveal{
+
+  opacity:0;
+
+  transform:translateY(80px);
+
+  transition:
+  opacity 1s ease,
+  transform 1s ease;
+
+}
+
+.reveal.active{
+
+  opacity:1;
+
+  transform:translateY(0);
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:950px){
+
+  .grid-2{
+
+    grid-template-columns:1fr;
+
+    gap:50px;
+
+  }
+
+  .hero-title{
+
+    font-size:90px;
+
+  }
+
+  .section-title{
+
+    font-size:62px;
+
+  }
+
+}
+
+@media(max-width:700px){
+
+  .container{
+
+    padding:0 7%;
+
+  }
+
+  section{
+
+    padding:90px 0;
+
+  }
+
+  .hero-title{
+
+    font-size:58px;
+
+  }
+
+  .section-title{
+
+    font-size:42px;
+
+  }
+
+  .big-title{
+
+    font-size:52px;
+
+  }
+
+  .description{
+
+    font-size:16px;
+
+  }
+
+  .primary-btn,
+  .secondary-btn{
+
+    width:100%;
+
+  }
+
+}.
