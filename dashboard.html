@@ -576,15 +576,15 @@ CONNECTED TO FIREBASE LIVE
        CAMPAIGNS
     ==================================== */
 
-    .campaigns{
+.campaigns{
 
-      display:flex;
+  display:flex;
 
-      gap:16px;
+  flex-direction:column;
 
-      overflow-x:auto;
+  gap:16px;
 
-    }
+}
 
     .campaigns::-webkit-scrollbar{
       display:none;
@@ -592,7 +592,7 @@ CONNECTED TO FIREBASE LIVE
 
     .campaign-card{
 
-      min-width:240px;
+      width:100%;
 
       background:#111;
 
@@ -736,7 +736,40 @@ CONNECTED TO FIREBASE LIVE
     .nav-active{
       color:#39ff14;
     }
+@media(max-width:700px){
 
+  .stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .campaigns{
+    flex-direction:column;
+    overflow:visible;
+  }
+
+  .campaign-card{
+    min-width:100%;
+  }
+
+  .share-buttons{
+    grid-template-columns:1fr;
+  }
+
+  .report-box{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .profile-top{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .message-box p{
+    font-size:18px;
+  }
+
+}
   </style>
 
 </head>
