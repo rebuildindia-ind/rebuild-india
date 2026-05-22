@@ -1,0 +1,984 @@
+<!-- =========================================================
+REBUILD INDIA - profile.html
+FINAL PREMIUM PROFILE PAGE
+FULL SCREEN • SCROLL ENABLED • FIREBASE LIVE
+========================================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Rebuild India Profile</title>
+
+  <!-- GOOGLE FONTS -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html,
+    body{
+
+      width:100%;
+
+      overflow-y:auto;
+      overflow-x:hidden;
+
+      font-family:'Inter',sans-serif;
+
+      background:#F3EBDD;
+
+      color:#1A120D;
+
+    }
+
+    body{
+
+      display:flex;
+      justify-content:center;
+
+      padding:14px;
+
+    }
+
+    /* ====================================
+       MAIN CARD
+    ==================================== */
+
+    .card{
+
+      width:100%;
+      max-width:430px;
+
+      min-height:96vh;
+
+      background:#1A120D;
+
+      border:3px solid #111;
+
+      position:relative;
+
+      overflow:hidden;
+
+      box-shadow:
+      8px 8px 0px rgba(0,0,0,0.15);
+
+    }
+
+    /* ====================================
+       TOPBAR
+    ==================================== */
+
+    .topbar{
+
+      width:100%;
+
+      background:#F3EBDD;
+
+      border-bottom:3px solid #111;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      padding:18px;
+
+    }
+
+    .brand{
+
+      display:flex;
+      align-items:center;
+
+      gap:14px;
+
+    }
+
+    .logo{
+
+      width:62px;
+      height:62px;
+
+      border-radius:50%;
+
+      border:3px solid #111;
+
+      background:
+      linear-gradient(
+      to bottom,
+
+      #D96B1D 0%,
+      #D96B1D 33%,
+
+      white 33%,
+      white 66%,
+
+      #1F5C3F 66%,
+      #1F5C3F 100%
+      );
+
+      position:relative;
+
+    }
+
+    .logo::after{
+
+      content:"";
+
+      position:absolute;
+
+      width:18px;
+      height:18px;
+
+      border:3px solid #0B2D6D;
+
+      border-radius:50%;
+
+      top:50%;
+      left:50%;
+
+      transform:translate(-50%,-50%);
+
+    }
+
+    .brand h1{
+
+      font-family:'Anton',sans-serif;
+
+      font-size:38px;
+
+      line-height:0.95;
+
+      letter-spacing:1px;
+
+      color:#111;
+
+    }
+
+    .member-box{
+
+      text-align:right;
+
+    }
+
+    .member-box p{
+
+      color:#D96B1D;
+
+      font-size:13px;
+
+      font-weight:800;
+
+      letter-spacing:3px;
+
+      margin-bottom:8px;
+
+    }
+
+    .member-box h2{
+
+      font-family:'Anton',sans-serif;
+
+      font-size:44px;
+
+      letter-spacing:2px;
+
+      line-height:1;
+
+      color:#111;
+
+    }
+
+    /* ====================================
+       FLAG SECTION
+    ==================================== */
+
+    .flag{
+
+      width:100%;
+      height:250px;
+
+      background:
+      linear-gradient(
+      to bottom,
+
+      #D96B1D 0%,
+      #D96B1D 33%,
+
+      #F3EBDD 33%,
+      #F3EBDD 66%,
+
+      #1F5C3F 66%,
+      #1F5C3F 100%
+      );
+
+      position:relative;
+
+    }
+
+    /* ====================================
+       PROFILE IMAGE
+    ==================================== */
+
+    .profile-wrapper{
+
+      position:absolute;
+
+      top:200px;
+      left:50%;
+
+      transform:translateX(-50%);
+
+      z-index:10;
+
+    }
+
+    .profile-image{
+
+      width:150px;
+      height:150px;
+
+      border-radius:50%;
+
+      object-fit:cover;
+
+      border:7px solid #F3EBDD;
+
+      display:block;
+
+      background:white;
+
+    }
+
+    .edit-btn{
+
+      position:absolute;
+
+      bottom:0;
+      right:0;
+
+      width:52px;
+      height:52px;
+
+      border:none;
+
+      border-radius:50%;
+
+      background:#D96B1D;
+
+      color:white;
+
+      font-size:18px;
+
+      box-shadow:
+      0 4px 10px rgba(0,0,0,0.3);
+
+    }
+
+    /* ====================================
+       CONTENT
+    ==================================== */
+
+    .content{
+
+      padding:120px 20px 24px;
+
+      color:#F3EBDD;
+
+    }
+
+    .name{
+
+      text-align:center;
+
+      font-family:'Anton',sans-serif;
+
+      font-size:58px;
+
+      line-height:0.95;
+
+      letter-spacing:1px;
+
+      text-transform:uppercase;
+
+      word-break:break-word;
+
+      padding:0 10px;
+
+    }
+
+    .role{
+
+      text-align:center;
+
+      margin-top:16px;
+
+      color:#D96B1D;
+
+      font-size:20px;
+
+      font-weight:800;
+
+      letter-spacing:2px;
+
+      text-transform:uppercase;
+
+    }
+
+    .divider{
+
+      width:100%;
+
+      height:1px;
+
+      background:#ffffff25;
+
+      margin:24px 0;
+
+    }
+
+    .quote{
+
+      text-align:center;
+
+      color:#D7CABA;
+
+      font-size:15px;
+
+      letter-spacing:5px;
+
+      line-height:1.6;
+
+      margin-bottom:24px;
+
+    }
+
+    /* ====================================
+       GRID
+    ==================================== */
+
+    .grid{
+
+      border:1px solid #ffffff20;
+
+    }
+
+    .row{
+
+      display:grid;
+
+      grid-template-columns:1fr 1fr;
+
+      border-bottom:1px solid #ffffff15;
+
+    }
+
+    .row:last-child{
+      border-bottom:none;
+    }
+
+    .box{
+
+      min-width:0;
+
+      min-height:110px;
+
+      padding:16px;
+
+      border-right:1px solid #ffffff15;
+
+      display:flex;
+      align-items:center;
+
+      gap:14px;
+
+    }
+
+    .box:last-child{
+      border-right:none;
+    }
+
+    .icon{
+
+      width:62px;
+      height:62px;
+
+      border:2px solid #D96B1D;
+
+      color:#D96B1D;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      font-size:24px;
+
+      flex-shrink:0;
+
+    }
+
+    .info{
+      min-width:0;
+    }
+
+    .info small{
+
+      display:block;
+
+      color:#D96B1D;
+
+      font-size:12px;
+
+      font-weight:800;
+
+      letter-spacing:3px;
+
+      margin-bottom:8px;
+
+    }
+
+    .info h3{
+
+      font-size:19px;
+
+      line-height:1.4;
+
+      font-weight:500;
+
+      word-break:break-word;
+
+      overflow-wrap:break-word;
+
+    }
+
+    /* ====================================
+       ABOUT
+    ==================================== */
+
+    .about{
+
+      display:flex;
+
+      align-items:flex-start;
+
+      gap:14px;
+
+      padding:18px;
+
+    }
+
+    /* ====================================
+       BUTTONS
+    ==================================== */
+
+    .buttons{
+
+      width:100%;
+
+      display:grid;
+
+      grid-template-columns:1fr 1fr;
+
+      margin-top:18px;
+
+    }
+
+    .btn{
+
+      height:74px;
+
+      border:none;
+
+      font-family:'Anton',sans-serif;
+
+      font-size:24px;
+
+      letter-spacing:1px;
+
+      color:white;
+
+    }
+
+    .edit{
+
+      background:#1F5C3F;
+    }
+
+    .save{
+
+      background:#D96B1D;
+    }
+
+    /* ====================================
+       MOBILE
+    ==================================== */
+
+    @media(max-width:430px){
+
+      .brand h1{
+        font-size:28px;
+      }
+
+      .member-box h2{
+        font-size:30px;
+      }
+
+      .profile-image{
+
+        width:135px;
+        height:135px;
+
+      }
+
+      .name{
+        font-size:48px;
+      }
+
+      .info h3{
+        font-size:16px;
+      }
+
+      .quote{
+        font-size:13px;
+        letter-spacing:3px;
+      }
+
+      .btn{
+        font-size:19px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- MAIN CARD -->
+
+  <div class="card">
+
+    <!-- TOPBAR -->
+
+    <div class="topbar">
+
+      <div class="brand">
+
+        <div class="logo"></div>
+
+        <h1>
+          REBUILD<br>
+          INDIA
+        </h1>
+
+      </div>
+
+      <div class="member-box">
+
+        <p>MEMBER ID</p>
+
+        <h2 id="memberId">
+          RI-000001
+        </h2>
+
+      </div>
+
+    </div>
+
+    <!-- FLAG -->
+
+    <div class="flag"></div>
+
+    <!-- PROFILE IMAGE -->
+
+    <div class="profile-wrapper">
+
+      <img
+      id="profileImage"
+      class="profile-image">
+
+      <button class="edit-btn">
+        <i class="fa-solid fa-pen"></i>
+      </button>
+
+    </div>
+
+    <!-- CONTENT -->
+
+    <div class="content">
+
+      <!-- NAME -->
+
+      <h1
+      class="name"
+      id="profileName">
+
+        LOADING
+
+      </h1>
+
+      <!-- ROLE -->
+
+      <div
+      class="role"
+      id="profileRole">
+
+        MEMBER
+
+      </div>
+
+      <!-- DIVIDER -->
+
+      <div class="divider"></div>
+
+      <!-- QUOTE -->
+
+      <div class="quote">
+        TOGETHER • RESILIENT • UNSTOPPABLE
+      </div>
+
+      <!-- GRID -->
+
+      <div class="grid">
+
+        <!-- ROW -->
+
+        <div class="row">
+
+          <div class="box">
+
+            <div class="icon">
+              <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="info">
+
+              <small>FULL NAME</small>
+
+              <h3 id="fullName">
+                Loading...
+              </h3>
+
+            </div>
+
+          </div>
+
+          <div class="box">
+
+            <div class="icon">
+              <i class="fa-solid fa-calendar"></i>
+            </div>
+
+            <div class="info">
+
+              <small>AGE</small>
+
+              <h3 id="age">
+                --
+              </h3>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ROW -->
+
+        <div class="row">
+
+          <div class="box">
+
+            <div class="icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+
+            <div class="info">
+
+              <small>DISTRICT</small>
+
+              <h3 id="district">
+                --
+              </h3>
+
+            </div>
+
+          </div>
+
+          <div class="box">
+
+            <div class="icon">
+              <i class="fa-solid fa-building-columns"></i>
+            </div>
+
+            <div class="info">
+
+              <small>CONSTITUENCY</small>
+
+              <h3 id="constituency">
+                --
+              </h3>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ROW -->
+
+        <div class="row">
+
+          <div class="box">
+
+            <div class="icon">
+              <i class="fa-solid fa-shield"></i>
+            </div>
+
+            <div class="info">
+
+              <small>ROLE</small>
+
+              <h3 id="role2">
+                MEMBER
+              </h3>
+
+            </div>
+
+          </div>
+
+          <div class="box">
+
+            <div class="icon">
+              <i class="fa-solid fa-calendar-days"></i>
+            </div>
+
+            <div class="info">
+
+              <small>JOINED ON</small>
+
+              <h3 id="joinedDate">
+                --
+              </h3>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ABOUT -->
+
+        <div class="about">
+
+          <div class="icon">
+            <i class="fa-solid fa-quote-left"></i>
+          </div>
+
+          <div class="info">
+
+            <small>ABOUT ME</small>
+
+            <h3 id="bio">
+              I believe in transparency and rebuilding India.
+            </h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- BUTTONS -->
+
+      <div class="buttons">
+
+        <button class="btn edit">
+          EDIT PROFILE
+        </button>
+
+        <button class="btn save">
+          SAVE CHANGES
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FIREBASE -->
+
+  <script type="module">
+
+    import { initializeApp }
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+    import {
+      getFirestore,
+      doc,
+      getDoc
+    }
+
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    // FIREBASE CONFIG
+
+    const firebaseConfig = {
+
+      apiKey: "AIzaSyC3bNRxf8kJDKkucTLVKktba_ulpphKc8o",
+
+      authDomain: "rebuildbharath-658a9.firebaseapp.com",
+
+      projectId: "rebuildbharath-658a9",
+
+      storageBucket: "rebuildbharath-658a9.firebasestorage.app",
+
+      messagingSenderId: "307480289915",
+
+      appId: "1:307480289915:web:31253b04dbd0498d6d78de",
+
+      measurementId: "G-DFC55C8M5N"
+
+    };
+
+    // INITIALIZE
+
+    const app =
+    initializeApp(firebaseConfig);
+
+    const db =
+    getFirestore(app);
+
+    // GET EMAIL
+
+    const email =
+    localStorage.getItem("userEmail");
+
+    // LOAD USER
+
+    async function loadUser(){
+
+      try{
+
+        const docRef =
+        doc(db,"members",email);
+
+        const docSnap =
+        await getDoc(docRef);
+
+        if(docSnap.exists()){
+
+          const data =
+          docSnap.data();
+
+          // PROFILE IMAGE
+
+          document.getElementById("profileImage")
+          .src =
+          data.photo ||
+          "https://cdn-icons-png.flaticon.com/512/149/149071.png";
+
+          // NAME
+
+          document.getElementById("profileName")
+          .innerText =
+          data.name || "MEMBER";
+
+          document.getElementById("fullName")
+          .innerText =
+          data.name || "--";
+
+          // ROLE
+
+          document.getElementById("profileRole")
+          .innerText =
+          data.role || "MEMBER";
+
+          document.getElementById("role2")
+          .innerText =
+          data.role || "MEMBER";
+
+          // MEMBER ID
+
+          document.getElementById("memberId")
+          .innerText =
+          data.memberId || "--";
+
+          // AGE
+
+          document.getElementById("age")
+          .innerText =
+          data.age || "--";
+
+          // DISTRICT
+
+          document.getElementById("district")
+          .innerText =
+          data.district || "--";
+
+          // CONSTITUENCY
+
+          document.getElementById("constituency")
+          .innerText =
+          data.constituency || "--";
+
+          // BIO
+
+          document.getElementById("bio")
+          .innerText =
+          data.bio ||
+          "I believe in transparency and rebuilding India.";
+
+          // JOIN DATE
+
+          if(data.joinedAt){
+
+            const joined =
+            new Date(data.joinedAt.seconds * 1000);
+
+            document.getElementById("joinedDate")
+            .innerText =
+            joined.toLocaleDateString();
+
+          }
+
+        }
+
+      }
+
+      catch(error){
+
+        console.log(error);
+
+      }
+
+    }
+
+    loadUser();
+
+  </script>
+
+</body>
+  </html>
