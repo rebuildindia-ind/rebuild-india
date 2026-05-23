@@ -1489,6 +1489,233 @@
   }
 
 }
+    /* =========================
+   YOUTH SECTION
+========================= */
+
+.youth-section{
+
+  width:100%;
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  background:#120B08;
+
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.youth-image{
+
+  min-height:850px;
+
+  position:relative;
+
+  background:
+  linear-gradient(
+  rgba(18,11,8,0.45),
+  rgba(18,11,8,0.72)
+  ),
+  url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200&auto=format&fit=crop');
+
+  background-size:cover;
+  background-position:center;
+
+}
+
+.youth-overlay{
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  linear-gradient(
+  90deg,
+  transparent,
+  rgba(18,11,8,0.28)
+  );
+
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.youth-content{
+
+  padding:100px 7%;
+
+  color:#EFE7D8;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+
+}
+
+.youth-mini-title{
+
+  color:#D96B1D;
+
+  font-size:15px;
+
+  font-weight:700;
+
+  letter-spacing:2px;
+
+  margin-bottom:24px;
+
+}
+
+.youth-content h2{
+
+  font-family:'Bebas Neue',sans-serif;
+
+  font-size:120px;
+
+  line-height:0.9;
+
+  letter-spacing:2px;
+
+  margin-bottom:35px;
+
+}
+
+.youth-content span{
+  color:#D96B1D;
+}
+
+.youth-description{
+
+  font-size:22px;
+
+  line-height:1.9;
+
+  color:rgba(239,231,216,0.78);
+
+  margin-bottom:50px;
+
+}
+
+/* =========================
+   POINTS
+========================= */
+
+.youth-points{
+
+  display:flex;
+  flex-direction:column;
+
+  gap:28px;
+
+  margin-bottom:55px;
+
+}
+
+.youth-point{
+
+  padding-bottom:22px;
+
+  border-bottom:
+  1px solid rgba(239,231,216,0.12);
+
+}
+
+.youth-point h3{
+
+  font-family:'Bebas Neue',sans-serif;
+
+  font-size:42px;
+
+  letter-spacing:1px;
+
+  margin-bottom:10px;
+
+}
+
+.youth-point p{
+
+  color:rgba(239,231,216,0.72);
+
+  line-height:1.8;
+
+  font-size:17px;
+
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.youth-buttons{
+
+  display:flex;
+
+  gap:18px;
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:950px){
+
+  .youth-section{
+
+    grid-template-columns:1fr;
+
+  }
+
+}
+
+@media(max-width:700px){
+
+  .youth-image{
+
+    min-height:420px;
+
+  }
+
+  .youth-content{
+
+    padding:80px 7%;
+
+  }
+
+  .youth-content h2{
+
+    font-size:72px;
+
+  }
+
+  .youth-description{
+
+    font-size:18px;
+
+  }
+
+  .youth-buttons{
+
+    flex-direction:column;
+
+  }
+
+  .primary-btn,
+  .secondary-btn{
+
+    width:100%;
+
+    text-align:center;
+
+  }
+
+}
   </style>
 
 </head>
@@ -1929,6 +2156,104 @@
       </span>
 
     </h2>
+
+  </div>
+
+</section>
+  <!-- =========================
+     YOUTH MOVEMENT SECTION
+========================= -->
+
+<section class="youth-section">
+
+  <!-- IMAGE SIDE -->
+
+  <div class="youth-image">
+
+    <div class="youth-overlay"></div>
+
+  </div>
+
+  <!-- CONTENT -->
+
+  <div class="youth-content">
+
+    <p class="youth-mini-title">
+      THE MOVEMENT
+    </p>
+
+    <h2>
+
+      INDIA DOES NOT NEED<br>
+
+      <span>
+        SPECTATORS.
+      </span>
+
+    </h2>
+
+    <p class="youth-description">
+
+      The next generation cannot remain silent while corruption steals the future.
+      India needs builders, leaders, innovators and young people willing to rebuild the nation.
+
+    </p>
+
+    <!-- POINTS -->
+
+    <div class="youth-points">
+
+      <div class="youth-point">
+
+        <h3>
+          LEAD
+        </h3>
+
+        <p>
+          Participate in nation building and public leadership.
+        </p>
+
+      </div>
+
+      <div class="youth-point">
+
+        <h3>
+          BUILD
+        </h3>
+
+        <p>
+          Create transparent systems and stronger communities.
+        </p>
+
+      </div>
+
+      <div class="youth-point">
+
+        <h3>
+          TRANSFORM
+        </h3>
+
+        <p>
+          Help shape the future of India through action.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- BUTTONS -->
+
+    <div class="youth-buttons">
+
+      <a href="#" class="primary-btn">
+        Join The Movement
+      </a>
+
+      <a href="#" class="secondary-btn">
+        Apply For Leadership
+      </a>
+
+    </div>
 
   </div>
 
