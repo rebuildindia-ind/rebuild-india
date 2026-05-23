@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Report A Problem | REBUILD INDIA</title>
+
+  <!-- FONTS -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+
+      background:#EFE7D8;
+
+      color:#120B08;
+
+      font-family:'Inter',sans-serif;
+
+      overflow-x:hidden;
+
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================== */
+
+    .navbar{
+
+      width:100%;
+
+      padding:26px 7%;
+
+      background:#120B08;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+    }
+
+    .logo{
+
+      font-family:'Bebas Neue',sans-serif;
+
+      font-size:52px;
+
+      letter-spacing:2px;
+
+      color:#EFE7D8;
+
+    }
+
+    .logo span{
+      color:#D96B1D;
+    }
+
+    .back-btn{
+
+      background:#D96B1D;
+
+      color:#fff;
+
+      padding:
+      14px
+      28px;
+
+      font-size:14px;
+
+      font-weight:700;
+
+      text-transform:uppercase;
+
+      letter-spacing:1px;
+
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero{
+
+      width:100%;
+
+      padding:
+      110px
+      7%
+      70px;
+
+      background:#120B08;
+
+      color:#EFE7D8;
+
+    }
+
+    .hero-mini{
+
+      color:#D96B1D;
+
+      font-size:15px;
+
+      font-weight:700;
+
+      letter-spacing:2px;
+
+      margin-bottom:25px;
+
+    }
+
+    .hero h1{
+
+      font-family:'Bebas Neue',sans-serif;
+
+      font-size:140px;
+
+      line-height:0.9;
+
+      letter-spacing:2px;
+
+      margin-bottom:30px;
+
+    }
+
+    .hero p{
+
+      width:65%;
+
+      font-size:22px;
+
+      line-height:1.9;
+
+      color:rgba(239,231,216,0.8);
+
+    }
+
+    /* =========================
+       CATEGORY SECTION
+    ========================== */
+
+    .category-section{
+
+      width:100%;
+
+      padding:90px 7%;
+
+      background:#EFE7D8;
+
+    }
+
+    .section-title{
+
+      font-family:'Bebas Neue',sans-serif;
+
+      font-size:100px;
+
+      line-height:0.92;
+
+      letter-spacing:2px;
+
+      margin-bottom:45px;
+
+    }
+
+    .section-title span{
+      color:#D96B1D;
+    }
+
+    .category-grid{
+
+      display:grid;
+
+      grid-template-columns:repeat(3,1fr);
+
+      gap:0;
+
+    }
+
+    .category-card{
+
+      padding:45px 35px;
+
+      min-height:200px;
+
+      border:
+      1px solid rgba(18,11,8,0.08);
+
+      background:#F4ECDD;
+
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+
+      transition:0.4s;
+
+    }
+
+    .category-card:hover{
+
+      background:#D96B1D;
+
+      color:#fff;
+
+    }
+
+    .category-card h3{
+
+      font-family:'Bebas Neue',sans-serif;
+
+      font-size:42px;
+
+      line-height:1;
+
+      letter-spacing:1px;
+
+      margin-bottom:15px;
+
+    }
+
+    .category-card p{
+
+      font-size:16px;
+
+      line-height:1.7;
+
+    }
+
+    /* =========================
+       FORM SECTION
+    ========================== */
+
+    .form-section{
+
+      width:100%;
+
+      padding:90px 7%;
+
+      background:#120B08;
+
+      color:#EFE7D8;
+
+    }
+
+    .report-form{
+
+      width:100%;
+
+      display:grid;
+
+      grid-template-columns:1fr 1fr;
+
+      gap:22px;
+
+    }
+
+    .full-width{
+      grid-column:1 / -1;
+    }
+
+    .form-group{
+
+      display:flex;
+      flex-direction:column;
+
+    }
+
+    .form-group label{
+
+      font-size:14px;
+
+      font-weight:700;
+
+      letter-spacing:1px;
+
+      margin-bottom:12px;
+
+      text-transform:uppercase;
+
+      color:#D96B1D;
+
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea{
+
+      width:100%;
+
+      padding:20px;
+
+      border:none;
+
+      outline:none;
+
+      background:#1C1411;
+
+      color:#EFE7D8;
+
+      font-size:16px;
+
+      font-family:'Inter',sans-serif;
+
+    }
+
+    textarea{
+
+      min-height:180px;
+
+      resize:none;
+
+    }
+
+    input[type="file"]{
+
+      padding:16px;
+
+      background:#1C1411;
+
+    }
+
+    .submit-btn{
+
+      margin-top:15px;
+
+      width:100%;
+
+      padding:24px;
+
+      background:#D96B1D;
+
+      border:none;
+
+      color:#fff;
+
+      font-size:15px;
+
+      font-weight:700;
+
+      text-transform:uppercase;
+
+      letter-spacing:1px;
+
+      cursor:pointer;
+
+      transition:0.4s;
+
+    }
+
+    .submit-btn:hover{
+
+      background:#B85714;
+
+    }
+
+    /* =========================
+       STATUS
+    ========================== */
+
+    .status-message{
+
+      margin-top:22px;
+
+      font-size:16px;
+
+      font-weight:600;
+
+      color:#D96B1D;
+
+    }
+
+    /* =========================
+       QUOTE SECTION
+    ========================== */
+
+    .quote-section{
+
+      width:100%;
+
+      padding:120px 7%;
+
+      background:#EFE7D8;
+
+      text-align:center;
+
+    }
+
+    .quote-section h2{
+
+      font-family:'Bebas Neue',sans-serif;
+
+      font-size:120px;
+
+      line-height:0.92;
+
+      letter-spacing:2px;
+
+      color:#120B08;
+
+    }
+
+    .quote-section span{
+      color:#D96B1D;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    .footer{
+
+      width:100%;
+
+      padding:35px 7%;
+
+      background:#120B08;
+
+      color:rgba(239,231,216,0.7);
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      font-size:14px;
+
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media(max-width:950px){
+
+      .category-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+    }
+
+    @media(max-width:700px){
+
+      .hero{
+
+        padding:
+        90px
+        7%
+        60px;
+
+      }
+
+      .hero h1{
+
+        font-size:74px;
+
+      }
+
+      .hero p{
+
+        width:100%;
+
+        font-size:18px;
+
+      }
+
+      .section-title{
+
+        font-size:68px;
+
+      }
+
+      .category-grid{
+
+        grid-template-columns:1fr;
+
+      }
+
+      .report-form{
+
+        grid-template-columns:1fr;
+
+      }
+
+      .quote-section{
+
+        padding:90px 7%;
+
+      }
+
+      .quote-section h2{
+
+        font-size:64px;
+
+      }
+
+      .footer{
+
+        flex-direction:column;
+
+        gap:12px;
+
+        text-align:center;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVBAR
+  ========================== -->
+
+  <nav class="navbar">
+
+    <div class="logo">
+      REBUILD <span>INDIA</span>
+    </div>
+
+    <a href="index.html" class="back-btn">
+      Back To Home
+    </a>
+
+  </nav>
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero">
+
+    <p class="hero-mini">
+      REPORT A PROBLEM
+    </p>
+
+    <h1>
+
+      SILENCE<br>
+      PROTECTS<br>
+      CORRUPTION.
+
+    </h1>
+
+    <p>
+
+      Report corruption, public issues, bribery, broken infrastructure or governance problems.
+      Every report helps build accountability and transparency.
+
+    </p>
+
+  </section>
+
+  <!-- =========================
+       CATEGORY SECTION
+  ========================== -->
+
+  <section class="category-section">
+
+    <h2 class="section-title">
+
+      WHAT DO YOU<br>
+      WANT TO <span>REPORT?</span>
+
+    </h2>
+
+    <div class="category-grid">
+
+      <div class="category-card">
+        <h3>Corruption</h3>
+        <p>Illegal activities, scams or misuse of public money.</p>
+      </div>
+
+      <div class="category-card">
+        <h3>Bribery</h3>
+        <p>Officials demanding money for services or approvals.</p>
+      </div>
+
+      <div class="category-card">
+        <h3>Broken Roads</h3>
+        <p>Damaged roads, potholes or poor infrastructure.</p>
+      </div>
+
+      <div class="category-card">
+        <h3>Hospital Issues</h3>
+        <p>Poor healthcare systems or negligence.</p>
+      </div>
+
+      <div class="category-card">
+        <h3>School Problems</h3>
+        <p>Education quality, infrastructure or teacher issues.</p>
+      </div>
+
+      <div class="category-card">
+        <h3>Water & Garbage</h3>
+        <p>Water problems, waste management or sanitation issues.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       FORM SECTION
+  ========================== -->
+
+  <section class="form-section">
+
+    <h2 class="section-title">
+
+      SUBMIT YOUR<br>
+      <span>REPORT.</span>
+
+    </h2>
+
+    <form class="report-form" id="reportForm">
+
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="name" required>
+      </div>
+
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" id="phone" required>
+      </div>
+
+      <div class="form-group">
+        <label>State</label>
+        <input type="text" id="state" required>
+      </div>
+
+      <div class="form-group">
+        <label>District</label>
+        <input type="text" id="district" required>
+      </div>
+
+      <div class="form-group full-width">
+        <label>Area / Location</label>
+        <input type="text" id="location" required>
+      </div>
+
+      <div class="form-group">
+        <label>Problem Category</label>
+
+        <select id="category" required>
+
+          <option value="">Select Category</option>
+          <option>Corruption</option>
+          <option>Bribery</option>
+          <option>Broken Roads</option>
+          <option>Hospital Issues</option>
+          <option>School Problems</option>
+          <option>Water & Garbage</option>
+
+        </select>
+
+      </div>
+
+      <div class="form-group">
+        <label>Against Whom?</label>
+        <input type="text" id="against">
+      </div>
+
+      <div class="form-group full-width">
+        <label>Problem Description</label>
+
+        <textarea
+        id="description"
+        required></textarea>
+
+      </div>
+
+      <div class="form-group full-width">
+        <label>Upload Photo Evidence</label>
+        <input type="file" id="photo">
+      </div>
+
+      <div class="form-group full-width">
+
+        <button type="submit" class="submit-btn">
+          Submit Report
+        </button>
+
+      </div>
+
+    </form>
+
+    <div class="status-message" id="statusMessage"></div>
+
+  </section>
+
+  <!-- =========================
+       QUOTE
+  ========================== -->
+
+  <section class="quote-section">
+
+    <h2>
+
+      INDIA WILL CHANGE<br>
+
+      <span>
+        WHEN PEOPLE START REPORTING.
+      </span>
+
+    </h2>
+
+  </section>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer class="footer">
+
+    <p>
+      © REBUILD INDIA
+    </p>
+
+    <p>
+      Stop Corruption. Build India.
+    </p>
+
+  </footer>
+
+  <!-- =========================
+       FIREBASE
+  ========================== -->
+
+  <script type="module">
+
+    import { initializeApp }
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+    import {
+      getFirestore,
+      collection,
+      addDoc,
+      serverTimestamp
+    }
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    import {
+      getStorage,
+      ref,
+      uploadBytes,
+      getDownloadURL
+    }
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
+
+    // FIREBASE CONFIG
+
+    const firebaseConfig = {
+
+      apiKey: "AIzaSyC3bNRxf8kJDKkucTLVKktba_ulpphKc8o",
+
+      authDomain: "rebuildbharath-658a9.firebaseapp.com",
+
+      projectId: "rebuildbharath-658a9",
+
+      storageBucket: "rebuildbharath-658a9.firebasestorage.app",
+
+      messagingSenderId: "307480289915",
+
+      appId: "1:307480289915:web:31253b04dbd0498d6d78de",
+
+      measurementId: "G-DFC55C8M5N"
+
+    };
+
+    // INIT
+
+    const app =
+    initializeApp(firebaseConfig);
+
+    const db =
+    getFirestore(app);
+
+    const storage =
+    getStorage(app);
+
+    // FORM
+
+    const reportForm =
+    document.getElementById("reportForm");
+
+    const statusMessage =
+    document.getElementById("statusMessage");
+
+    reportForm.addEventListener("submit", async(e)=>{
+
+      e.preventDefault();
+
+      statusMessage.innerHTML =
+      "Submitting report...";
+
+      try{
+
+        const name =
+        document.getElementById("name").value;
+
+        const phone =
+        document.getElementById("phone").value;
+
+        const state =
+        document.getElementById("state").value;
+
+        const district =
+        document.getElementById("district").value;
+
+        const location =
+        document.getElementById("location").value;
+
+        const category =
+        document.getElementById("category").value;
+
+        const against =
+        document.getElementById("against").value;
+
+        const description =
+        document.getElementById("description").value;
+
+        const photoFile =
+        document.getElementById("photo").files[0];
+
+        let photoURL = "";
+
+        // UPLOAD PHOTO
+
+        if(photoFile){
+
+          const storageRef =
+          ref(
+            storage,
+            "reports/" + Date.now() + "_" + photoFile.name
+          );
+
+          await uploadBytes(
+            storageRef,
+            photoFile
+          );
+
+          photoURL =
+          await getDownloadURL(storageRef);
+
+        }
+
+        // SAVE TO FIRESTORE
+
+        await addDoc(
+          collection(db,"reports"),
+          {
+
+            name,
+            phone,
+            state,
+            district,
+            location,
+            category,
+            against,
+            description,
+            photoURL,
+
+            createdAt:
+            serverTimestamp()
+
+          }
+        );
+
+        statusMessage.innerHTML =
+        "Report submitted successfully.";
+
+        reportForm.reset();
+
+      }
+
+      catch(error){
+
+        console.error(error);
+
+        statusMessage.innerHTML =
+        "Failed to submit report.";
+
+      }
+
+    });
+
+  </script>
+
+</body>
+
+</html>
