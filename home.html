@@ -946,12 +946,315 @@
   }
 
 }
+    /* =========================
+   CINEMATIC LOADER
+========================= */
+
+.loader{
+
+  position:fixed;
+
+  inset:0;
+
+  width:100%;
+  height:100vh;
+
+  background:#120B08;
+
+  z-index:999999999;
+
+  overflow:hidden;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+}
+
+/* =========================
+   BACKGROUND IMAGE
+========================= */
+
+.loader-bg{
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  linear-gradient(
+  rgba(18,11,8,0.78),
+  rgba(18,11,8,0.88)
+  ),
+  url('https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=1920&auto=format&fit=crop');
+
+  background-size:cover;
+  background-position:center;
+
+  animation:slowZoom 8s ease forwards;
+
+}
+
+@keyframes slowZoom{
+
+  from{
+    transform:scale(1);
+  }
+
+  to{
+    transform:scale(1.08);
+  }
+
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.loader-overlay{
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  linear-gradient(
+  90deg,
+  rgba(217,107,29,0.12),
+  transparent
+  );
+
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.loader-content{
+
+  position:relative;
+
+  z-index:3;
+
+  width:100%;
+
+  padding:0 7%;
+
+}
+
+.loader-mini{
+
+  color:#D96B1D;
+
+  font-size:16px;
+
+  font-weight:700;
+
+  letter-spacing:3px;
+
+  margin-bottom:26px;
+
+  opacity:0;
+
+  animation:fadeUp 1s ease forwards;
+
+}
+
+.loader-title{
+
+  font-family:'Bebas Neue',sans-serif;
+
+  font-size:120px;
+
+  line-height:0.9;
+
+  letter-spacing:2px;
+
+  color:#EFE7D8;
+
+  margin-bottom:20px;
+
+  opacity:0;
+
+  transform:translateY(40px);
+
+  animation:
+  fadeUp 1s ease forwards;
+
+  animation-delay:0.4s;
+
+}
+
+.loader-subtitle{
+
+  font-family:'Bebas Neue',sans-serif;
+
+  font-size:120px;
+
+  line-height:0.9;
+
+  letter-spacing:2px;
+
+  color:#D96B1D;
+
+  opacity:0;
+
+  transform:translateY(40px);
+
+  animation:
+  fadeUp 1s ease forwards;
+
+  animation-delay:1s;
+
+}
+
+/* =========================
+   BOTTOM LINE
+========================= */
+
+.loader-bottom{
+
+  position:absolute;
+
+  left:0;
+  bottom:0;
+
+  width:100%;
+
+  height:5px;
+
+  background:rgba(239,231,216,0.08);
+
+  z-index:5;
+
+}
+
+.loading-line{
+
+  width:0%;
+
+  height:100%;
+
+  background:#D96B1D;
+
+  animation:loading 3.8s ease forwards;
+
+}
+
+@keyframes loading{
+
+  from{
+    width:0%;
+  }
+
+  to{
+    width:100%;
+  }
+
+}
+
+/* =========================
+   TEXT ANIMATION
+========================= */
+
+@keyframes fadeUp{
+
+  to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+  }
+
+}
+
+/* =========================
+   HIDE LOADER
+========================= */
+
+.loader.hide{
+
+  opacity:0;
+
+  visibility:hidden;
+
+  transition:1s ease;
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+  .loader-title,
+  .loader-subtitle{
+
+    font-size:62px;
+
+  }
+
+  .loader-mini{
+
+    font-size:13px;
+
+  }
+
+}
   </style>
 
 </head>
 
 <body>
+<!-- =========================
+     CINEMATIC LOADER
+========================= -->
 
+<div class="loader">
+
+  <!-- BACKGROUND IMAGE -->
+
+  <div class="loader-bg"></div>
+
+  <!-- OVERLAY -->
+
+  <div class="loader-overlay"></div>
+
+  <!-- CONTENT -->
+
+  <div class="loader-content">
+
+    <p class="loader-mini">
+      REBUILD INDIA
+    </p>
+
+    <h1 class="loader-title">
+
+      INDIA DOES NOT<br>
+      LACK MONEY.
+
+    </h1>
+
+    <h2 class="loader-subtitle">
+
+      INDIA LACKS<br>
+      HONEST SYSTEMS.
+
+    </h2>
+
+  </div>
+
+  <!-- BOTTOM LINE -->
+
+  <div class="loader-bottom">
+
+    <div class="loading-line"></div>
+
+  </div>
+
+</div>
   <!-- =========================
        NAVBAR
   ========================== -->
@@ -1276,6 +1579,26 @@
   </div>
 
 </section>
+  <script>
+
+/* =========================
+   LOADER REMOVE
+========================= */
+
+window.addEventListener("load",()=>{
+
+  const loader =
+  document.querySelector(".loader");
+
+  setTimeout(()=>{
+
+    loader.classList.add("hide");
+
+  },4000);
+
+});
+
+  </script>
 </body>
 
 </html>
