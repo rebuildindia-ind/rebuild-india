@@ -1757,6 +1757,47 @@
   transform:translateY(-2px);
 
 }
+    /* =========================
+   LOGIN BUTTON
+========================= */
+
+.login-btn{
+
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:
+  18px
+  34px;
+
+  background:#120B08;
+
+  color:#EFE7D8;
+
+  font-size:14px;
+
+  font-weight:700;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+
+  border:
+  1px solid rgba(18,11,8,0.12);
+
+  transition:0.4s;
+
+}
+
+.login-btn:hover{
+
+  background:#D96B1D;
+
+  color:#fff;
+
+}
   </style>
 
 </head>
@@ -1798,7 +1839,11 @@
   <!-- =========================
        HERO SECTION
   ========================== -->
+<a href="#" class="login-btn" id="loginBtn">
 
+  Login
+
+</a>
   <section class="hero">
 
     <div class="hero-overlay"></div>
@@ -2324,7 +2369,45 @@ window.addEventListener("load",()=>{
 });
 
   </script>
-  
+  <script>
+
+/* =========================
+   LOGIN CHECK
+========================= */
+
+const loginBtn =
+document.getElementById("loginBtn");
+
+loginBtn.addEventListener("click",(e)=>{
+
+  e.preventDefault();
+
+  // CHECK USER LOGIN
+
+  const user =
+  localStorage.getItem("rebuildUser");
+
+  // IF LOGGED IN
+
+  if(user){
+
+    window.location.href =
+    "dashboard.html";
+
+  }
+
+  // IF NOT LOGGED IN
+
+  else{
+
+    window.location.href =
+    "details.html";
+
+  }
+
+});
+
+  </script>
 </body>
 
 </html>
