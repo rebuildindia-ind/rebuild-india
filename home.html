@@ -1203,6 +1203,292 @@
   }
 
 }
+    /* =========================
+   BEFORE / AFTER SECTION
+========================= */
+
+.compare-section{
+
+  width:100%;
+
+  padding:120px 7%;
+
+  background:#EFE7D8;
+
+}
+
+/* =========================
+   TOP
+========================= */
+
+.compare-top{
+
+  margin-bottom:60px;
+
+}
+
+.compare-mini-title{
+
+  color:#D96B1D;
+
+  font-size:15px;
+
+  font-weight:700;
+
+  letter-spacing:2px;
+
+  margin-bottom:22px;
+
+}
+
+.compare-title{
+
+  font-family:'Bebas Neue',sans-serif;
+
+  font-size:120px;
+
+  line-height:0.9;
+
+  letter-spacing:2px;
+
+  color:#120B08;
+
+}
+
+.compare-title span{
+  color:#D96B1D;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.compare-grid{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:0;
+
+}
+
+/* =========================
+   BOX
+========================= */
+
+.compare-box{
+
+  position:relative;
+
+  min-height:760px;
+
+  overflow:hidden;
+
+  display:flex;
+  align-items:flex-end;
+
+}
+
+/* =========================
+   IMAGES
+========================= */
+
+.before-box{
+
+  background:
+  linear-gradient(
+  rgba(18,11,8,0.75),
+  rgba(18,11,8,0.88)
+  ),
+  url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop');
+
+  background-size:cover;
+  background-position:center;
+
+}
+
+.after-box{
+
+  background:
+  linear-gradient(
+  rgba(18,11,8,0.55),
+  rgba(18,11,8,0.72)
+  ),
+  url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop');
+
+  background-size:cover;
+  background-position:center;
+
+}
+
+.compare-overlay{
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  linear-gradient(
+  to top,
+  rgba(0,0,0,0.78),
+  transparent
+  );
+
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.compare-content{
+
+  position:relative;
+
+  z-index:2;
+
+  padding:60px;
+
+  color:#EFE7D8;
+
+}
+
+.compare-label{
+
+  color:#D96B1D;
+
+  font-size:15px;
+
+  font-weight:700;
+
+  letter-spacing:2px;
+
+  margin-bottom:24px;
+
+}
+
+.compare-content h3{
+
+  font-family:'Bebas Neue',sans-serif;
+
+  font-size:90px;
+
+  line-height:0.92;
+
+  letter-spacing:2px;
+
+  margin-bottom:35px;
+
+}
+
+.compare-content ul{
+  list-style:none;
+}
+
+.compare-content ul li{
+
+  font-size:22px;
+
+  line-height:2;
+
+  border-bottom:
+  1px solid rgba(239,231,216,0.12);
+
+  padding:12px 0;
+
+}
+
+/* =========================
+   BOTTOM
+========================= */
+
+.compare-bottom{
+
+  padding-top:70px;
+
+}
+
+.compare-bottom h2{
+
+  font-family:'Bebas Neue',sans-serif;
+
+  font-size:120px;
+
+  line-height:0.92;
+
+  letter-spacing:2px;
+
+  color:#120B08;
+
+}
+
+.compare-bottom span{
+  color:#D96B1D;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+  .compare-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:700px){
+
+  .compare-section{
+
+    padding:90px 7%;
+
+  }
+
+  .compare-title{
+
+    font-size:70px;
+
+  }
+
+  .compare-box{
+
+    min-height:520px;
+
+  }
+
+  .compare-content{
+
+    padding:35px;
+
+  }
+
+  .compare-content h3{
+
+    font-size:56px;
+
+  }
+
+  .compare-content ul li{
+
+    font-size:18px;
+
+  }
+
+  .compare-bottom{
+
+    padding-top:55px;
+
+  }
+
+  .compare-bottom h2{
+
+    font-size:62px;
+
+  }
+
+}
   </style>
 
 </head>
@@ -1579,6 +1865,120 @@
   </div>
 
 </section>
+  <!-- =========================
+     BEFORE / AFTER INDIA
+========================= -->
+
+<section class="compare-section">
+
+  <!-- TOP -->
+
+  <div class="compare-top">
+
+    <p class="compare-mini-title">
+      TWO DIFFERENT FUTURES
+    </p>
+
+    <h2 class="compare-title">
+
+      THE INDIA WE HAVE.<br>
+      THE INDIA WE CAN <span>BUILD.</span>
+
+    </h2>
+
+  </div>
+
+  <!-- SPLIT -->
+
+  <div class="compare-grid">
+
+    <!-- BEFORE -->
+
+    <div class="compare-box before-box">
+
+      <div class="compare-overlay"></div>
+
+      <div class="compare-content">
+
+        <p class="compare-label">
+          BEFORE
+        </p>
+
+        <h3>
+
+          CORRUPTION.<br>
+          DELAYS.<br>
+          BROKEN SYSTEMS.
+
+        </h3>
+
+        <ul>
+
+          <li>Poor infrastructure</li>
+          <li>Bribery systems</li>
+          <li>Weak hospitals</li>
+          <li>Unemployment</li>
+          <li>Slow governance</li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- AFTER -->
+
+    <div class="compare-box after-box">
+
+      <div class="compare-overlay"></div>
+
+      <div class="compare-content">
+
+        <p class="compare-label">
+          AFTER
+        </p>
+
+        <h3>
+
+          TRANSPARENCY.<br>
+          DEVELOPMENT.<br>
+          OPPORTUNITY.
+
+        </h3>
+
+        <ul>
+
+          <li>Modern education</li>
+          <li>Digital governance</li>
+          <li>Better healthcare</li>
+          <li>Jobs & innovation</li>
+          <li>Clean infrastructure</li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+
+  <div class="compare-bottom">
+
+    <h2>
+
+      THE DIFFERENCE IS NOT MONEY.<br>
+
+      <span>
+        THE DIFFERENCE IS CORRUPTION.
+      </span>
+
+    </h2>
+
+  </div>
+
+</section>
   <script>
 
 /* =========================
@@ -1599,6 +1999,7 @@ window.addEventListener("load",()=>{
 });
 
   </script>
+  
 </body>
 
 </html>
