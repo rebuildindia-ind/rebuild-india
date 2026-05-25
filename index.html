@@ -1809,6 +1809,121 @@
   gap:14px;
 
 }
+    /* =========================
+   FLOATING ACTIONS
+========================= */
+
+.floating-actions{
+
+  position:absolute;
+
+  top:125px;
+  right:7%;
+
+  z-index:999;
+
+  display:flex;
+
+  gap:14px;
+
+}
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.login-btn{
+
+  background:#EFE7D8;
+
+  color:#120B08;
+
+  padding:
+  14px
+  28px;
+
+  font-size:13px;
+
+  font-weight:700;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+
+  transition:0.4s;
+
+}
+
+.login-btn:hover{
+
+  background:#D96B1D;
+
+  color:#fff;
+
+}
+
+/* =========================
+   REPORT BUTTON
+========================= */
+
+.report-btn{
+
+  background:#1F5C3F;
+
+  color:#EFE7D8;
+
+  padding:
+  14px
+  28px;
+
+  font-size:13px;
+
+  font-weight:700;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+
+  transition:0.4s;
+
+}
+
+.report-btn:hover{
+
+  background:#163F2C;
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+  .floating-actions{
+
+    top:110px;
+
+    right:7%;
+
+    flex-direction:column;
+
+    align-items:flex-end;
+
+  }
+
+  .login-btn,
+  .report-btn{
+
+    padding:
+    12px
+    20px;
+
+    font-size:11px;
+
+  }
+
+}
   </style>
 
 </head>
@@ -1846,11 +1961,21 @@
     </div>
 
   </nav>
-<a href="#" class="login-btn" id="loginBtn">
+<!-- =========================
+     FLOATING ACTIONS
+========================= -->
 
-  Login
+<div class="floating-actions">
 
-</a>
+  <a href="report.html" class="report-btn">
+    Report Problem
+  </a>
+
+  <a href="#" class="login-btn" id="loginBtn">
+    Login
+  </a>
+
+</div>
   <!-- =========================
        HERO SECTION
   ========================== -->
@@ -1894,11 +2019,7 @@
         <a href="#" class="secondary-btn">
           Read Manifesto
         </a>
-<a href="report.html" class="report-btn">
 
-  Report A Problem ⚠️
-
-</a>
       </div>
 
     </div>
