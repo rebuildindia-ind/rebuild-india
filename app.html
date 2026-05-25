@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Zenova Provisional Admission Acknowledgement</title>
+
+<style>
+
+body{
+margin:0;
+padding:30px 15px;
+background:#eef1f5;
+font-family:Arial,Helvetica,sans-serif;
+color:#1f2937;
+}
+
+.document{
+max-width:820px;
+margin:auto;
+background:#fcfcfb;
+box-shadow:0 10px 35px rgba(0,0,0,0.08);
+border-radius:8px;
+overflow:hidden;
+position:relative;
+}
+
+.watermark{
+position:absolute;
+top:45%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:130px;
+font-weight:800;
+letter-spacing:8px;
+color:rgba(11,31,58,0.03);
+pointer-events:none;
+user-select:none;
+}
+
+.header{
+background:#0B1F3A;
+padding:38px 50px;
+color:white;
+position:relative;
+}
+
+.logo-title{
+margin:0;
+font-size:36px;
+font-weight:800;
+letter-spacing:1px;
+}
+
+.subtitle{
+margin-top:10px;
+font-size:14px;
+color:#d7dfef;
+letter-spacing:0.4px;
+}
+
+.confidential{
+position:absolute;
+right:50px;
+top:25px;
+font-size:11px;
+letter-spacing:1.5px;
+color:#d7dfef;
+}
+
+.reference{
+margin-top:28px;
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.reference-box{
+padding:11px 16px;
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.12);
+border-radius:6px;
+font-size:13px;
+color:#f3f4f6;
+}
+
+.content{
+padding:50px;
+}
+
+.title{
+font-size:30px;
+font-family:Georgia,serif;
+font-weight:700;
+color:#0B1F3A;
+line-height:1.5;
+margin-bottom:10px;
+}
+
+.gold-line{
+width:80px;
+height:3px;
+background:#B48A3D;
+border-radius:10px;
+margin-bottom:35px;
+}
+
+.text{
+font-size:15px;
+line-height:2;
+color:#374151;
+}
+
+.section-title{
+margin-top:40px;
+margin-bottom:18px;
+font-size:19px;
+font-family:Georgia,serif;
+font-weight:700;
+color:#0B1F3A;
+}
+
+.info-table{
+width:100%;
+border-collapse:collapse;
+border:1px solid #e5e7eb;
+}
+
+.info-table td{
+padding:16px;
+font-size:15px;
+border-bottom:1px solid #e5e7eb;
+}
+
+.info-table tr:last-child td{
+border-bottom:none;
+}
+
+.label{
+width:40%;
+background:#f8fafc;
+font-weight:600;
+color:#111827;
+}
+
+.value{
+color:#4b5563;
+}
+
+.approval-box{
+margin-top:35px;
+background:#f9fafb;
+border-left:4px solid #B48A3D;
+padding:28px;
+border-radius:6px;
+}
+
+.approval-title{
+font-size:17px;
+font-weight:700;
+color:#0B1F3A;
+margin-bottom:12px;
+}
+
+.approval-text{
+font-size:15px;
+line-height:1.9;
+color:#4b5563;
+}
+
+.signature-section{
+margin-top:70px;
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.signature-label{
+font-size:12px;
+letter-spacing:1px;
+color:#6b7280;
+margin-bottom:22px;
+}
+
+.signature-line{
+width:220px;
+border-top:2px solid #0B1F3A;
+margin-bottom:12px;
+}
+
+.signature-name{
+font-size:18px;
+font-weight:700;
+color:#0B1F3A;
+}
+
+.signature-role{
+margin-top:6px;
+font-size:15px;
+line-height:1.8;
+color:#4b5563;
+}
+
+.verified-box{
+padding:15px 22px;
+border:2px solid #B48A3D;
+border-radius:8px;
+text-align:center;
+}
+
+.verified-title{
+font-size:13px;
+font-weight:700;
+letter-spacing:1px;
+color:#0B1F3A;
+}
+
+.verified-sub{
+margin-top:5px;
+font-size:12px;
+color:#6b7280;
+}
+
+.footer{
+margin-top:45px;
+padding-top:25px;
+border-top:1px solid #e5e7eb;
+font-size:13px;
+line-height:1.9;
+color:#6b7280;
+}
+
+@media print{
+
+body{
+background:white;
+padding:0;
+}
+
+.document{
+box-shadow:none;
+max-width:100%;
+}
+
+}
+
+@media only screen and (max-width:700px){
+
+.header{
+padding:30px 24px;
+}
+
+.content{
+padding:32px 24px;
+}
+
+.logo-title{
+font-size:28px;
+}
+
+.title{
+font-size:24px;
+}
+
+.reference{
+flex-direction:column;
+}
+
+.info-table td{
+display:block;
+width:100%;
+box-sizing:border-box;
+}
+
+.label{
+width:100%;
+}
+
+.signature-section{
+flex-direction:column;
+align-items:flex-start;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="document">
+
+<div class="watermark">
+ZENOVA
+</div>
+
+<!-- HEADER -->
+
+<div class="header">
+
+
+<h1 class="logo-title">
+ZENOVA EDUCATIONS
+</h1>
+
+<div class="subtitle">
+Integrated with Best International PU College
+</div>
+
+<div class="reference">
+
+<div class="reference-box">
+Reference No : ZNV/IPUC/2026/0115
+</div>
+
+<div class="reference-box">
+Application No : ZNV2026PU1186
+</div>
+
+<div class="reference-box">
+Date of Issue : 25 May 2026
+</div>
+
+</div>
+
+</div>
+
+<!-- CONTENT -->
+
+<div class="content">
+
+<div class="title">
+Provisional Admission Payment Acknowledgement
+</div>
+
+<div class="gold-line"></div>
+
+<p class="text">
+
+Dear Parent / Guardian,
+
+<br><br>
+
+This is to officially acknowledge that <strong>B Kavya</strong>, who has secured approximately <strong>94.88%</strong> in SSLC examination, has initiated the provisional admission process for the Zenova Integrated Program – 1st PUC (2026–27).
+
+<br><br>
+
+The student has requested consideration for full educational fee waiver support based on merit performance and scholarship eligibility review.
+
+<br><br>
+
+An advance amount of <strong>₹10,000</strong> towards uniform and books has been successfully received by <strong>Zenova Educations</strong>.
+
+</p>
+
+<!-- STUDENT DETAILS -->
+
+<div class="section-title">
+Student Information
+</div>
+
+<table class="info-table">
+
+<tr>
+<td class="label">Name : B Kavya</td>
+<td class="value">SSLC Percentage : 94.88%</td>
+</tr>
+
+<tr>
+<td class="label">Program : Zenova Integrated Program – 1st PUC</td>
+<td class="value">Academic Year : 2026 – 27</td>
+</tr>
+
+<tr>
+<td class="label">Advance Amount Paid : ₹10,000</td>
+<td class="value">Purpose : Uniform & Books</td>
+</tr>
+
+</table>
+
+<!-- NOTICE -->
+
+<div class="approval-box">
+
+<div class="approval-title">
+Important Admission Notice
+</div>
+
+<div class="approval-text">
+
+The present document shall be treated only as a provisional admission payment acknowledgement and not as final admission confirmation.
+
+<br><br>
+
+Seat allotment and scholarship approval shall be reviewed based on merit availability and institutional seat allocation process. Final confirmation regarding admission approval and seat allotment shall be communicated within <strong>48 hours</strong> from the time of admission processing.
+
+<br><br>
+
+In the event of non-availability of seat allocation or institutional approval, the advance amount of <strong>₹10,000</strong> received by Zenova Educations shall be refunded accordingly.
+
+</div>
+
+</div>
+
+<!-- CONFIDENTIALITY -->
+
+<div class="approval-box">
+
+<div class="approval-title">
+Confidentiality & Communication Notice
+</div>
+
+<div class="approval-text">
+
+All information related to scholarship review, institutional support, and admission evaluation process shall remain strictly confidential.
+
+Kindly contact only the concerned authorized institutional representative regarding scholarship or admission-related discussions.
+
+</div>
+
+</div>
+
+<!-- SIGNATURE -->
+
+<div class="signature-section">
+
+<div>
+
+<div class="signature-label">
+AUTHORIZED DIGITAL ACKNOWLEDGEMENT
+</div>
+
+<div class="signature-line"></div>
+
+<div class="signature-name">
+Manjunath
+</div>
+
+<div class="signature-role">
+
+Operational Head<br>
+Zenova Educations<br>
+Bangalore
+
+</div>
+
+</div>
+
+<div>
+
+<div class="verified-box">
+
+<div class="verified-title">
+PAYMENT ACKNOWLEDGED
+</div>
+
+<div class="verified-sub">
+Zenova Educations
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+Zenova Educations<br>
+Integrated with Best International PU College
+
+<br><br>
+
+This is a confidential institutional acknowledgement issued by Zenova Educations for provisional admission processing purposes.
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+  </html>
