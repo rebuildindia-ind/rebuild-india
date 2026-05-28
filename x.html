@@ -536,8 +536,62 @@ Zenova Educations is positioned to bridge the quality education gap in underserv
 </section>
 
 </div>
+<!-- DOWNLOAD PDF BUTTON -->
+<div style="margin-top:80px;text-align:center;">
 
+<button 
+onclick="downloadPDF()" 
+style="
+background:#0f172a;
+color:white;
+padding:20px 50px;
+font-size:20px;
+font-weight:700;
+border:none;
+border-radius:18px;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 10px 30px rgba(15,23,42,0.15);
+">
+
+Download Investor Proposal PDF
+
+</button>
+
+</div>
+
+<!-- PDF LIBRARIES -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+
+async function downloadPDF(){
+
+    const { jsPDF } = window.jspdf;
+
+    const element = document.body;
+
+    const canvas = await html2canvas(element, {
+        scale:2,
+        useCORS:true
+    });
+
+    const imgData = canvas.toDataURL('image/png');
+
+    const pdf = new jsPDF('p','mm','a4');
+
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+
+    const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+    pdf.addImage(imgData,'PNG',0,0,pdfWidth,pdfHeight);
+
+    pdf.save('Zenova-Educations-Investor-Proposal.pdf');
+}
+
+</script>
 </body>
 </html>
-```
 
